@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  Matchee
+
+  Created by Marco Mantegazza on 11/2/17.
+  Copyright © 2017 FYDEM Pte Ltd. All rights reserved.
+*/
+
+//Save style popup
+
+"SaveStylePopup_Title" = "Salva stile";
+"SaveStylePopup_SubTitle" = "Vuoi salvare questo stile?";
+"SaveStylePopup_Cancel" = "Cancella";
+"SaveStylePopup_Ok" = "Salva";
+"SaveStylePopup_Saved" = "Salvato";
+"SaveStylePopup_SavedTitle" = "Il tuo stile é stato salvato";
+"SaveStylePopup_NotSaved" = "Oops";
+"SaveStylePopup_NotSavedTitle" = "Qualcosa é andato storto";
+
+//Tutorial
+
+"tutorial_leftRight" = "Scorri sinistra e destra per cambiare vestito";
+"tutorial_color" = "Tocca un vestito per cambiare il suo colore";
+"tutorial_match" = "Controlla se la combinazione di colori é giusta";
+"tutorial_pinch" = "Setta la tua taglia scorrendo due dita";
+"tutorial_camera" = "Premi a lungo per DETEZIONE COLORE VIA CAMERA";
+
+
+//In-app purchases
+"addons_availableSoon" = "Presto disponibile";
+"addons_availableSoonText" = "Questo filtro, nuovi vestiti e altro ancora presto in arrivo!";
+"addons_tableViewTitle" = "Acquisti disponibili";
+"addons_loading" = "caricamento...";
+"addons_purchaseSuccessAlert_title" = "Grazie mille!";
+"addons_purchaseSuccessAlert_message" = "Il tuo nuovo filtro é ora a disposizione =)";
+
+//Match settings
+"settings_buyMoreButton" = "Acquista";
+"settings_sendIdeasButton" = "Manda feedback e idee";
+
+//Color matching
+"MatchColors_NoMatch" = "Non combinano";
+"MatchColors_Match" = "Combinano!";

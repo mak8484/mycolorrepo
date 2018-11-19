@@ -1,0 +1,12 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target "Matchee" do
+
+pod 'Mixpanel'
+pod 'Firebase/Core'
+pod 'Firebase/AdMob'
+pod 'NKOColorPickerView'
+pod 'SwiftyStoreKit', '0.6.0'
+
+end

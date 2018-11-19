@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  Matchee
+
+  Created by Marco Mantegazza on 11/2/17.
+  Copyright © 2017 FYDEM Pte Ltd. All rights reserved.
+*/
+
+//Save style popup
+
+"SaveStylePopup_Title" = "Save it for later";
+"SaveStylePopup_SubTitle" = "Would you like to save this set?";
+"SaveStylePopup_Cancel" = "Cancel";
+"SaveStylePopup_Ok" = "Yes";
+"SaveStylePopup_Saved" = "Saved";
+"SaveStylePopup_SavedTitle" = "Your set has been saved";
+"SaveStylePopup_NotSaved" = "Oops";
+"SaveStylePopup_NotSavedTitle" = "Something went wrong";
+
+//Tutorial
+
+"tutorial_leftRight" = "Swipe left or right to change clothes";
+"tutorial_color" = "Touch a cloth to change its color";
+"tutorial_match" = "Check if your colors match by clicking the Matchee button";
+"tutorial_pinch" = "Set your preferred body shape by using two fingers";
+"tutorial_camera" = "Long press for CAMERA COLOR DETECTION";
+
+//In-app purchases
+"addons_availableSoon" = "Available soon";
+"addons_availableSoonText" = "This filter and much more will be available soon, stay tuned!";
+"addons_tableViewTitle" = "Available purchases";
+"addons_loading" = "loading...";
+"addons_purchaseSuccessAlert_title" = "Thank you!";
+"addons_purchaseSuccessAlert_message" = "Your new filter is now available =)";
+
+//Match settings
+"settings_buyMoreButton" = "Buy more";
+"settings_sendIdeasButton" = "Send feedback and ideas";
+
+//Color matching
+"MatchColors_NoMatch" = "No match";
+"MatchColors_Match" = "Match!";

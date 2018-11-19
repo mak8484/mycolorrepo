@@ -1,0 +1,173 @@
+
+/* Class = "UILabel"; text = "Cloth hue"; ObjectID = "3hS-4a-IDN"; */
+"3hS-4a-IDN.text" = "Colore";
+
+/* Class = "UILabel"; text = "Shoes"; ObjectID = "4oX-Js-dS7"; */
+"4oX-Js-dS7.text" = "Scarpe";
+
+/* Class = "UITextField"; placeholder = "HEX Colour"; ObjectID = "8L5-hp-I8J"; */
+"8L5-hp-I8J.placeholder" = "Codice HEX";
+
+/* Class = "UITextField"; text = "#458736"; ObjectID = "8L5-hp-I8J"; */
+"8L5-hp-I8J.text" = "#458736";
+
+/* Class = "UILabel"; text = "Cloth color"; ObjectID = "8pI-OQ-cop"; */
+"8pI-OQ-cop.text" = "Colore abito";
+
+/* Class = "UILabel"; text = "Overall match"; ObjectID = "Asb-aw-FFZ"; */
+"Asb-aw-FFZ.text" = "Combinazione colori";
+
+/* Class = "UIButton"; normalTitle = "F"; ObjectID = "EQc-rk-QpK"; */
+"EQc-rk-QpK.normalTitle" = "D";
+
+/* Class = "UINavigationItem"; title = "Matching algorithms"; ObjectID = "EQy-dr-bqc"; */
+"EQy-dr-bqc.title" = "Algoritmi";
+
+/* Class = "UILabel"; text = "Visit >"; ObjectID = "ESy-zw-lTt"; */
+"ESy-zw-lTt.text" = "Visita >";
+
+/* Class = "UILabel"; text = "Brought to you by EMEMAPPS"; ObjectID = "FaI-sw-xWK"; */
+"FaI-sw-xWK.text" = "Sviluppato da EMEMAPPS";
+
+/* Class = "UIButton"; normalTitle = "x"; ObjectID = "Feh-sh-pJp"; */
+"Feh-sh-pJp.normalTitle" = "X";
+
+/* Class = "UIButton"; normalTitle = "x"; ObjectID = "H5P-Of-Bjf"; */
+"H5P-Of-Bjf.normalTitle" = "X";
+
+/* Class = "UILabel"; text = "Skin color"; ObjectID = "Hdz-Mi-2hZ"; */
+"Hdz-Mi-2hZ.text" = "Colore pelle";
+
+/* Class = "UILabel"; text = "Belt"; ObjectID = "Hjz-KM-nDY"; */
+"Hjz-KM-nDY.text" = "Cintura";
+
+/* Class = "UILabel"; text = "Visit >"; ObjectID = "HsX-Dh-O7s"; */
+"HsX-Dh-O7s.text" = "Visita >";
+
+/* Class = "UILabel"; text = "Click to change color matching algoritm"; ObjectID = "Htg-2a-8N0"; */
+"Htg-2a-8N0.text" = "Clicca per cambiare l'algoritmo di combinazione colore";
+
+/* Class = "UIBarButtonItem"; title = "restore"; ObjectID = "INk-wD-eew"; */
+"INk-wD-eew.title" = "Ripristina";
+
+/* Class = "UIButton"; normalTitle = "Send feedback and ideas"; ObjectID = "IWb-uY-tHw"; */
+"IWb-uY-tHw.normalTitle" = "Manda il tuo feedback e idee";
+
+/* Class = "UILabel"; text = "Matchee
+Test"; ObjectID = "J4v-H7-bAh"; */
+"J4v-H7-bAh.text" = "Matchee
+Test";
+
+/* Class = "UILabel"; text = "Accessories"; ObjectID = "KtQ-L8-m6R"; */
+"KtQ-L8-m6R.text" = "Accessori";
+
+/* Class = "UILabel"; text = "Visit >"; ObjectID = "LHV-qC-Z2m"; */
+"LHV-qC-Z2m.text" = "Visita >";
+
+/* Class = "UIButton"; normalTitle = "W"; ObjectID = "LkL-I6-VNs"; */
+"LkL-I6-VNs.normalTitle" = "D";
+
+/* Class = "UILabel"; text = "Mono"; ObjectID = "LrM-Lg-vBh"; */
+"LrM-Lg-vBh.text" = "Mono";
+
+/* Class = "UILabel"; text = "matching.."; ObjectID = "N8q-f2-aUT"; */
+"N8q-f2-aUT.text" = "matching..";
+
+/* Class = "UIButton"; normalTitle = "Buy more"; ObjectID = "Ptq-bR-Sht"; */
+"Ptq-bR-Sht.normalTitle" = "Sblocca algoritmi";
+
+/* Class = "UILabel"; text = "Top"; ObjectID = "RBT-DY-FVg"; */
+"RBT-DY-FVg.text" = "Sopra";
+
+/* Class = "UILabel"; text = "Matchee"; ObjectID = "Rfn-4s-DQh"; */
+"Rfn-4s-DQh.text" = "Matchee";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "V33-xK-0eM"; */
+"V33-xK-0eM.title" = "Indietro";
+
+/* Class = "UIButton"; normalTitle = "M"; ObjectID = "Weg-6o-RW9"; */
+"Weg-6o-RW9.normalTitle" = "U";
+
+/* Class = "UILabel"; text = "Bottom"; ObjectID = "XQM-X0-bUW"; */
+"XQM-X0-bUW.text" = "Sotto";
+
+/* Class = "UILabel"; text = "Visit >"; ObjectID = "XnA-k6-ddy"; */
+"XnA-k6-ddy.text" = "Visita >";
+
+/* Class = "UILabel"; text = "Are you a fashion designer? Want your clothes shown in the app?
+
+Send us your designs!
+Click for more info"; ObjectID = "YjM-N1-yrF"; */
+"YjM-N1-yrF.text" = "Sei un fashion designer? Vuoi i tuoi design nella app?
+
+Mandaceli!
+Clicca per piu informazioni";
+
+/* Class = "UIButton"; normalTitle = "x"; ObjectID = "dr5-j2-QWi"; */
+"dr5-j2-QWi.normalTitle" = "X";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "hy5-LE-593"; */
+"hy5-LE-593.text" = "Dettagli";
+
+/* Class = "UILabel"; text = "matching.."; ObjectID = "hyW-a9-JnT"; */
+"hyW-a9-JnT.text" = "matching..";
+
+/* Class = "UILabel"; text = "Please select your gender"; ObjectID = "iSL-OK-c0f"; */
+"iSL-OK-c0f.text" = "Uomo o donna?";
+
+/* Class = "UILabel"; text = "Top-Bottom "; ObjectID = "jRg-8b-nk2"; */
+"jRg-8b-nk2.text" = "Sopra-Sotto";
+
+/* Class = "UILabel"; text = "Gender"; ObjectID = "js4-vM-gpQ"; */
+"js4-vM-gpQ.text" = "Sesso";
+
+/* Class = "UILabel"; text = "Matchee"; ObjectID = "lQX-La-aaA"; */
+"lQX-La-aaA.text" = "Matchee";
+
+/* Class = "UILabel"; text = "Complementary"; ObjectID = "lag-GQ-gNK"; */
+"lag-GQ-gNK.text" = "Complementare";
+
+/* Class = "UILabel"; text = "You can select more than one matching algorithm"; ObjectID = "nkO-yE-Bp7"; */
+"nkO-yE-Bp7.text" = "Puoi selezionare più di un algoritmo allo stesso tempo";
+
+/* Class = "UILabel"; text = "Your clothes"; ObjectID = "om1-HC-x39"; */
+"om1-HC-x39.text" = "I tuoi vestiti";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "pGV-3t-43Y"; */
+"pGV-3t-43Y.text" = "Titolo";
+
+/* Class = "UILabel"; text = "Matchee"; ObjectID = "pOF-WQ-u5l"; */
+"pOF-WQ-u5l.text" = "Matchee";
+
+/* Class = "UILabel"; text = "Split
+compelementary"; ObjectID = "qXN-HY-DZD"; */
+"qXN-HY-DZD.text" = "Complementare\ndiviso";
+
+/* Class = "UILabel"; text = "Green icons = match!"; ObjectID = "s9u-lJ-ovk"; */
+"s9u-lJ-ovk.text" = "Icone verdi = combina!";
+
+/* Class = "UIButton"; normalTitle = "M"; ObjectID = "swa-un-eCT"; */
+"swa-un-eCT.normalTitle" = "U";
+
+/* Class = "UIBarButtonItem"; title = "X"; ObjectID = "v3g-Xw-yiZ"; */
+"v3g-Xw-yiZ.title" = "X";
+
+/* Class = "UILabel"; text = "Color matching algorithm selection"; ObjectID = "vVH-tu-WHf"; */
+"vVH-tu-WHf.text" = "Selezione algoritmo di combinazione colori";
+
+/* Class = "UILabel"; text = "matching.."; ObjectID = "vsQ-iE-G6k"; */
+"vsQ-iE-G6k.text" = "matching..";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "x01-3Q-zeg"; */
+"x01-3Q-zeg.normalTitle" = "Fatto";
+
+/* Class = "UILabel"; text = "Analogous"; ObjectID = "y02-OP-rOd"; */
+"y02-OP-rOd.text" = "Analogo";
+
+/* Class = "UILabel"; text = "My styles"; ObjectID = "yYZ-Wb-lCF"; */
+"yYZ-Wb-lCF.text" = "I miei stili";
+
+/* Class = "UIButton"; normalTitle = "Color
+picker"; ObjectID = "zDH-kS-jU1"; */
+"zDH-kS-jU1.normalTitle" = "Paletta
+colori";

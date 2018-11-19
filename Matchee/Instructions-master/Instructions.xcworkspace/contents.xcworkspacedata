@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Instructions.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Examples/Instructions Example.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Examples/Instructions App Extensions Example.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:.swiftlint.yml">
+   </FileRef>
+   <FileRef
+      location = "group:.travis.yml">
+   </FileRef>
+</Workspace>

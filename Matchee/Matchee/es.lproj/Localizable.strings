@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  Matchee
+
+  Created by Marco Mantegazza on 11/2/17.
+  Copyright © 2017 FYDEM Pte Ltd. All rights reserved.
+*/
+
+//Save style popup
+
+"SaveStylePopup_Title" = "Guardar para después";
+"SaveStylePopup_SubTitle" = "¿Te gustaría guardar este conjunto?";
+"SaveStylePopup_Cancel" = "Cancelar";
+"SaveStylePopup_Ok" = "Si";
+"SaveStylePopup_Saved" = "Guardado";
+"SaveStylePopup_SavedTitle" = "Tu conjunto ha sido guardado";
+"SaveStylePopup_NotSaved" = "Ups!";
+"SaveStylePopup_NotSavedTitle" = "Algo salió mal";
+
+//Tutorial
+
+"tutorial_leftRight" = "Desliza hacia la izquierda o derecha para cambiar las prendas";
+"tutorial_color" = "Toca una prenda para cambiar su color";
+"tutorial_match" = "Revisa si los colores que escogiste combinan utilizando el botón Matche";
+"tutorial_pinch" = "Ajusta tu forma preferida de cuerpo utilizando dos dedos";
+"tutorial_camera" = "Deja presionado para DETECTAR EL COLOR CON LA CÁMARA";
+
+//In-app purchases
+"addons_availableSoon" = "Disponible pronto";
+"addons_availableSoonText" = "Éste filtro y muchos otros mas estarán disponibles pronto.
+¡Permanece atento!";
+"addons_tableViewTitle" = "Compras disponibles";
+"addons_loading" = "Cargando…";
+"addons_purchaseSuccessAlert_title" = "¡Gracias! ";
+"addons_purchaseSuccessAlert_message" = "Tu nuevo filtro ahora está disponible =)";
+
+//Match settings
+"settings_buyMoreButton" = "Comprar más";
+"settings_sendIdeasButton" = "Enviar comentarios e ideas";
+
+//Color matching
+"MatchColors_NoMatch" = "No combinan";
+"MatchColors_Match" = "¡Combinación!";
+
