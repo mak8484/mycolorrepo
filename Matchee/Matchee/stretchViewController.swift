@@ -46,6 +46,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
     
     @IBOutlet weak var colorPickerFineTuneHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var leftMenuHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet var clothColorLabel: UILabel!
     @IBOutlet var clothHueLabel: UILabel!
@@ -62,7 +63,6 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
     
     @IBOutlet var designerLeadingConstraint: NSLayoutConstraint!
 
-    @IBOutlet var leftMenuHeightConstraint: NSLayoutConstraint!
     //menu
     @IBOutlet var mainSideMenu: UIStackView!
     @IBOutlet var loveButtonOutlet: UIButton!
@@ -270,7 +270,9 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
         switch screenHeight {
         case 896:
             colorPickerViewHeight = 164.0
-          
+            self.colorPickerFineTuneConstraint.constant = -20.0
+            self.colorPickerFineTuneHeightConstraint.constant = -130.0
+            self.keyboardLifting = 140.0
         case 812:
             colorPickerViewHeight = 144.0
             self.colorPickerFineTuneConstraint.constant = -20.0

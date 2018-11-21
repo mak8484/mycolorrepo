@@ -19,7 +19,6 @@ class MatchSettingsViewController: UIViewController, MFMailComposeViewController
     @IBOutlet var ButtonSplitComplementary: UIButton!
     
     @IBOutlet var buttonBuyMore: UIButton!
-    @IBOutlet var buttonSendIdeas: UIButton!
     
     var complementary:Int = 0
     var mono:Int = 0
@@ -35,8 +34,6 @@ class MatchSettingsViewController: UIViewController, MFMailComposeViewController
         
         //localization
         self.buttonBuyMore.titleLabel?.text = NSLocalizedString("settings_buyMoreButton", comment: "Buy More")
-        self.buttonSendIdeas.titleLabel?.text = NSLocalizedString("settings_sendIdeasButton" , comment: "Buy More")
-        
         
         complementary = UserDefaults.standard.integer(forKey: "Matchee.complementaryCheck")
         mono = UserDefaults.standard.integer(forKey: "Matchee.monochromaticCheck")

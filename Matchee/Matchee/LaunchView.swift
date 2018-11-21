@@ -26,7 +26,17 @@ class LaunchView: UIViewController {
     override func viewDidLayoutSubviews() {
         UIView.animate(withDuration: 0.5, delay: 1.0, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
             
-            self.logoView.frame = CGRect(x: 8, y: 8, width: 60, height: 22)
+            let screenHeight = UIScreen.main.bounds.height
+            
+            switch screenHeight {
+                case 896:
+                    self.logoView.frame = CGRect(x: 8, y: 48, width: 60, height: 22)
+                case 812:
+                    self.logoView.frame = CGRect(x: 8, y: 48, width: 60, height: 22)
+                default:
+                    self.logoView.frame = CGRect(x: 8, y: 8, width: 60, height: 22)
+
+            }
             
         }, completion: {(true) in
             
