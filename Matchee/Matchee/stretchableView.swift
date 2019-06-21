@@ -77,7 +77,7 @@ class stretchableView: UIImageView {
 
         cloth.color = color
         cloth.imageView.image = cloth.image
-        cloth.imageView.image = cloth.imageView.image?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        cloth.imageView.image = cloth.imageView.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         cloth.imageView.image = colorize.processPixels(in: cloth.imageView.image!, color: color)//MM might add check if image exists
         
     }
@@ -208,11 +208,11 @@ class stretchableView: UIImageView {
             tapGesture.numberOfTapsRequired = 1
             
             let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.swiped(gesture:)))
-            swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+            swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
             cloth.imageView.addGestureRecognizer(swipeLeft)
             
             let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.swiped(gesture:)))
-            swipeRight.direction = UISwipeGestureRecognizerDirection.right
+            swipeRight.direction = UISwipeGestureRecognizer.Direction.right
             cloth.imageView.addGestureRecognizer(swipeRight)
             
             let longTap = UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(gestureRecognizer:)))
@@ -225,12 +225,12 @@ class stretchableView: UIImageView {
             cloth.imageView.clipsToBounds = true
             cloth.imageView.backgroundColor = UIColor.clear
             cloth.imageView.isMultipleTouchEnabled = true
-            cloth.imageView.contentMode = UIViewContentMode.scaleAspectFit
-            cloth.imageView.image = cloth.image.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+            cloth.imageView.contentMode = UIView.ContentMode.scaleAspectFit
+            cloth.imageView.image = cloth.image.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
             cloth.imageView.image = colorize.processPixels(in: (cloth.imageView.image)!,color:cloth.color)
 
             self.addSubview(cloth.imageView)
-            self.bringSubview(toFront: cloth.imageView)
+            self.bringSubviewToFront(cloth.imageView)
             
             self.translatesAutoresizingMaskIntoConstraints = false
             cloth.imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -329,11 +329,11 @@ class stretchableView: UIImageView {
 
         self.backgroundView.frame = self.frame
         self.backgroundView.transform = CGAffineTransform(a: 1.0, b: 0.0, c: 0.0, d: 1.0, tx: 0.0, ty: 0.0)
-        self.backgroundView.image = UIImage(named:imageName)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        self.backgroundView.image = UIImage(named:imageName)?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         self.backgroundView.image = colorize.processPixels(in: (self.backgroundView.image)!,color:self.skinColor)
 
         self.addSubview(self.backgroundView)
-        self.sendSubview(toBack: self.backgroundView)
+        self.sendSubviewToBack(self.backgroundView)
         
         self.addConstraint(NSLayoutConstraint(item: self.backgroundView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: self.backgroundView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0))
@@ -345,7 +345,7 @@ class stretchableView: UIImageView {
     
     public func changeBackgroundViewColor(color:UIColor, image:String){
         self.skinColor = color
-        self.backgroundView.image = UIImage(named:image)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        self.backgroundView.image = UIImage(named:image)?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         self.backgroundView.image = colorize.processPixels(in: (self.backgroundView.image)!,color:self.skinColor)
 
 //        self.backgroundView.image = UIImage(named:"w-model")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
@@ -354,14 +354,14 @@ class stretchableView: UIImageView {
     
     // MARK:  GESTURE RECOGNIZERS   //////////////////////////////////////////////////////////////
     
-    func swiped(gesture:UISwipeGestureRecognizer){
+    @objc func swiped(gesture:UISwipeGestureRecognizer){
     
         var clothesMen:ClothesMen = ClothesMen()
         var clothesWomen:ClothesWomen = ClothesWomen()
         
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
-            case UISwipeGestureRecognizerDirection.right:
+            case UISwipeGestureRecognizer.Direction.right:
                     print("swiped right on view with tag \(gesture.view!.tag)")
                     
                     let cloth = clothes[gesture.view!.tag]
@@ -501,10 +501,10 @@ class stretchableView: UIImageView {
                     }
                     
                 break
-            case UISwipeGestureRecognizerDirection.down:
+            case UISwipeGestureRecognizer.Direction.down:
                 
                 break
-            case UISwipeGestureRecognizerDirection.left:
+            case UISwipeGestureRecognizer.Direction.left:
                     print("swiped left on view with tag \(gesture.view!.tag)")
                     let cloth = clothes[gesture.view!.tag]
                     let currentGender:String = UserDefaults.standard.string(forKey: "Matchee.currentGender")!
@@ -639,7 +639,7 @@ class stretchableView: UIImageView {
                         break
                     }
                 break
-            case UISwipeGestureRecognizerDirection.up:
+            case UISwipeGestureRecognizer.Direction.up:
                 
                 break
             default:
@@ -653,8 +653,8 @@ class stretchableView: UIImageView {
     
     }
     
-    func longTap(gestureRecognizer:UILongPressGestureRecognizer){
-        if gestureRecognizer.state == UIGestureRecognizerState.began {
+    @objc func longTap(gestureRecognizer:UILongPressGestureRecognizer){
+        if gestureRecognizer.state == UIGestureRecognizer.State.began {
             
             var selectedCloth:Cloth = Cloth()
             
@@ -673,9 +673,9 @@ class stretchableView: UIImageView {
     
 
 
-    func pinchedOut(gestureRecognizer:UIPinchGestureRecognizer){
+    @objc func pinchedOut(gestureRecognizer:UIPinchGestureRecognizer){
 
-        if gestureRecognizer.state == UIGestureRecognizerState.changed || gestureRecognizer.state == UIGestureRecognizerState.began{
+        if gestureRecognizer.state == UIGestureRecognizer.State.changed || gestureRecognizer.state == UIGestureRecognizer.State.began{
             
             if gestureRecognizer.numberOfTouches > 1 {
                 
@@ -732,13 +732,13 @@ class stretchableView: UIImageView {
                 }
             }
         }
-        else if gestureRecognizer.state == UIGestureRecognizerState.ended{
+        else if gestureRecognizer.state == UIGestureRecognizer.State.ended{
             lastTouchedPositionPinchOut = CGPoint.zero
         }
         
     }
 
-    func doubleTapped(gestureRecognizer:UITapGestureRecognizer){
+    @objc func doubleTapped(gestureRecognizer:UITapGestureRecognizer){
 
         var selectedCloth:Cloth = Cloth()
         

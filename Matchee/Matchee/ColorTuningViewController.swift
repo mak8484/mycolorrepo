@@ -73,7 +73,7 @@ class ColorTuningViewController: UIViewController, SwiftHUEColorPickerDelegate {
         self.hexValue.text = colorString
         
         self.colorTuningFillOutlet.image = UIImage(named: "colorDetectionFill")
-        self.colorTuningFillOutlet.image = self.colorTuningFillOutlet.image?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        self.colorTuningFillOutlet.image = self.colorTuningFillOutlet.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         self.colorTuningFillOutlet.image = colorize.processPixels(in: self.colorTuningFillOutlet.image!, color: averageColor!)
 
     }
@@ -140,7 +140,7 @@ class ColorTuningViewController: UIViewController, SwiftHUEColorPickerDelegate {
         
         self.hexValue.text = colorString
         self.colorTuningFillOutlet.image = UIImage(named: "colorDetectionFill")
-        self.colorTuningFillOutlet.image = self.colorTuningFillOutlet.image?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        self.colorTuningFillOutlet.image = self.colorTuningFillOutlet.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         self.colorTuningFillOutlet.image = colorize.processPixels(in: self.colorTuningFillOutlet.image!, color: color)
 
         

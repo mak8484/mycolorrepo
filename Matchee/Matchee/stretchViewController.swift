@@ -184,8 +184,8 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
         self.changeSkinColorButton.layer.cornerRadius = 15.0
         self.changeSkinColorButton.clipsToBounds = true
         
-        shareButtonOutlet.imageView?.contentMode = UIViewContentMode.scaleAspectFit
-        matcheeButtonOutlet.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        shareButtonOutlet.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        matcheeButtonOutlet.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         
         self.match.chosenAlgorithm = .complementaryColorRGB
         
@@ -335,7 +335,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
     }
 
     
-    func saveCurrentUsedClothes(){
+    @objc func saveCurrentUsedClothes(){
         stretchView.saveCurrentUsedClothes()
     }
     
@@ -356,20 +356,20 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
         
         //Action View
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
-        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
         self.actionView.addGestureRecognizer(swipeRight)
         
         //Stretch View
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
-        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        swipeDown.direction = UISwipeGestureRecognizer.Direction.down
         self.view.addGestureRecognizer(swipeDown)
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         self.designerView.addGestureRecognizer(swipeLeft)
         
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
-        swipeUp.direction = UISwipeGestureRecognizerDirection.up
+        swipeUp.direction = UISwipeGestureRecognizer.Direction.up
         self.view.addGestureRecognizer(swipeUp)
         
         
@@ -384,19 +384,19 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
 //
 //    }
     
-    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
-            case UISwipeGestureRecognizerDirection.right:
+            case UISwipeGestureRecognizer.Direction.right:
               self.showHideActionView()
                 break
-            case UISwipeGestureRecognizerDirection.down:
+            case UISwipeGestureRecognizer.Direction.down:
 
                 break
-            case UISwipeGestureRecognizerDirection.left:
+            case UISwipeGestureRecognizer.Direction.left:
                 self.hideDesignerView()
                 break
-            case UISwipeGestureRecognizerDirection.up:
+            case UISwipeGestureRecognizer.Direction.up:
 
                 break
             default:
@@ -445,7 +445,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
                 newConstraint.identifier = "newMenuHeightConstraint"
                 self.view.addConstraint(newConstraint)
 
-                self.mainSideMenu.axis = UILayoutConstraintAxis.horizontal
+                self.mainSideMenu.axis = NSLayoutConstraint.Axis.horizontal
                 self.mainSideMenu.spacing = 0.0
                 self.mainSideMenu.layoutIfNeeded()
                 
@@ -503,7 +503,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
         
         let shareItems:Array = [(img),url]
         let activityViewController:UIActivityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
-        activityViewController.excludedActivityTypes = [UIActivityType.print, UIActivityType.postToWeibo, UIActivityType.copyToPasteboard, UIActivityType.addToReadingList, UIActivityType.postToVimeo]
+        activityViewController.excludedActivityTypes = [UIActivity.ActivityType.print, UIActivity.ActivityType.postToWeibo, UIActivity.ActivityType.copyToPasteboard, UIActivity.ActivityType.addToReadingList, UIActivity.ActivityType.postToVimeo]
         self.present(activityViewController, animated: true, completion: nil)
         
     }
@@ -555,7 +555,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
                 let newConstraint:NSLayoutConstraint = NSLayoutConstraint(item: self.leftSideMenuStackView, attribute: .height, relatedBy: .equal, toItem: self.stretchView, attribute: .height, multiplier: 0.08, constant: 0 )
                 newConstraint.identifier = "newleftMenuHeightConstraint"
                 self.view.addConstraint(newConstraint)
-                self.leftSideMenuStackView.axis = UILayoutConstraintAxis.horizontal
+                self.leftSideMenuStackView.axis = NSLayoutConstraint.Axis.horizontal
                 
                 let firstView = self.leftSideMenuStackView.arrangedSubviews[0]
                 firstView.isHidden = true
@@ -595,7 +595,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
                 let newConstraint:NSLayoutConstraint = NSLayoutConstraint(item: self.leftSideMenuStackView, attribute: .height, relatedBy: .equal, toItem: self.view, attribute: .height, multiplier: 0.30, constant: 0 )
                 newConstraint.identifier = "leftMenuHeightConstraint"
                 self.view.addConstraint(newConstraint)
-                self.leftSideMenuStackView.axis = UILayoutConstraintAxis.vertical
+                self.leftSideMenuStackView.axis = NSLayoutConstraint.Axis.vertical
                 let firstView = self.leftSideMenuStackView.arrangedSubviews[0]
                 firstView.isHidden = false
 
@@ -644,7 +644,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
                         newConstraint.identifier = "menuHeightConstraint"
                         self.view.addConstraint(newConstraint)
                         
-                        self.mainSideMenu.axis = UILayoutConstraintAxis.vertical
+                        self.mainSideMenu.axis = NSLayoutConstraint.Axis.vertical
                         self.mainSideMenu.spacing = 10.0
                         
                         let newConstraint2:NSLayoutConstraint = NSLayoutConstraint(item: self.stretchView, attribute: .top, relatedBy: .equal, toItem: self.topLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: 8)
@@ -667,7 +667,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
         }
     }
     
-    func colorMatching(){
+    @objc func colorMatching(){
     
         let match:MatchColors = MatchColors()
         
@@ -760,7 +760,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
     
     }
     
-    func showHideBottomMenuFromTap(_ notification: NSNotification?){
+    @objc func showHideBottomMenuFromTap(_ notification: NSNotification?){
         
         //Mixpanel
         let mixpanel = Mixpanel.sharedInstance()
@@ -812,8 +812,8 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
         UserDefaults.standard.synchronize()
         
         
-        self.changeToManButton.setBackgroundImage(UIImage(named:"buttonGenderSelected"), for: UIControlState.normal)
-        self.changeToWomanButton.setBackgroundImage(UIImage(named:"buttonGenderNotSelected"), for: UIControlState.normal)
+        self.changeToManButton.setBackgroundImage(UIImage(named:"buttonGenderSelected"), for: UIControl.State.normal)
+        self.changeToWomanButton.setBackgroundImage(UIImage(named:"buttonGenderNotSelected"), for: UIControl.State.normal)
         let storageManager = Storage()
         let clothInstance:Cloth = Cloth()
         var clothes:[Cloth] = [Cloth]()
@@ -845,8 +845,8 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
         UserDefaults.standard.synchronize()
 
         
-        self.changeToManButton.setBackgroundImage(UIImage(named:"buttonGenderNotSelected"), for: UIControlState.normal)
-        self.changeToWomanButton.setBackgroundImage(UIImage(named:"buttonGenderSelected"), for: UIControlState.normal)
+        self.changeToManButton.setBackgroundImage(UIImage(named:"buttonGenderNotSelected"), for: UIControl.State.normal)
+        self.changeToWomanButton.setBackgroundImage(UIImage(named:"buttonGenderSelected"), for: UIControl.State.normal)
         let storageManager = Storage()
         let clothInstance:Cloth = Cloth()
         var clothes:[Cloth] = [Cloth]()
@@ -917,7 +917,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
         
     }
     
-    func selectSkinColor(_ sender:UIButton){
+    @objc func selectSkinColor(_ sender:UIButton){
     
         var skinColors:SkinColors = SkinColors()
         let skinColorsArray = skinColors.getSkinColorArray()
@@ -1008,7 +1008,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
     
     // MARK: Notifications handlers ////////////////////////
     
-    func changeClothColorFromDetection(_ notification: NSNotification){
+    @objc func changeClothColorFromDetection(_ notification: NSNotification){
         if let selectedColor:UIColor = notification.userInfo?["selectedColor"] as? UIColor {
             //self.valuePicked(selectedColor, type: SwiftHUEColorPicker.PickerType.color)
             self.stretchView.setImageViewColor(cloth: self.selectedClothingElement, color: selectedColor)
@@ -1017,7 +1017,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
         }
     }
     
-    func presentCameraPicker(_ notification: NSNotification?){
+    @objc func presentCameraPicker(_ notification: NSNotification?){
         
         if let clothingElement = notification?.userInfo?["clothingElement"] as? Cloth {
             self.selectedClothingElement = clothingElement
@@ -1026,7 +1026,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
         if UIImagePickerController.availableCaptureModes(for: .rear) != nil {
             
             //picker.allowsEditing = false
-            self.picker.sourceType = UIImagePickerControllerSourceType.camera
+            self.picker.sourceType = UIImagePickerController.SourceType.camera
             self.picker.cameraCaptureMode = .photo
             self.picker.cameraDevice = .rear
             self.picker.showsCameraControls = true
@@ -1059,7 +1059,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
     
     }
     
-    func updateDesignerView(){
+    @objc func updateDesignerView(){
         self.topDesignerLabel.text = currentClothPiecesOfStretchView.sharedInstance.top[0] as? String
         self.beltDesignerLabel.text = currentClothPiecesOfStretchView.sharedInstance.belt[0] as? String
         self.bottomDesignerLabel.text = currentClothPiecesOfStretchView.sharedInstance.bottom[0] as? String
@@ -1097,10 +1097,13 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
     
     // MARK: Image picker delegate /////////////////////////
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
         
         picker.dismiss(animated: false, completion: {
-            if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            if let pickedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
 
                 let circleCropController = KACircleCropViewController(withImage: pickedImage)
                 circleCropController.delegate = self
@@ -1397,7 +1400,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
         switch(index) {
         case 0:
             coachMarkBodyView.hintLabel.text = NSLocalizedString("tutorial_leftRight", comment: "")
-            coachMarkBodyView.nextButton.setTitle("Ok!", for: UIControlState.normal)
+            coachMarkBodyView.nextButton.setTitle("Ok!", for: UIControl.State.normal)
             width = self.stretchView.clothes[0].imageView.bounds.width
             coachMarkArrowView = CustomCoachMarkArrowView(orientation: .top, imageName:"tutorial_swipeleftright")
             let oneThirdOfWidth = coachMarksController.overlay.frame.size.width / 3
@@ -1409,7 +1412,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
             
         case 1:
             coachMarkBodyView.hintLabel.text = NSLocalizedString("tutorial_color", comment: "")
-            coachMarkBodyView.nextButton.setTitle("Ok!", for: UIControlState.normal)
+            coachMarkBodyView.nextButton.setTitle("Ok!", for: UIControl.State.normal)
             
             width = self.stretchView.clothes[0].imageView.bounds.width
 
@@ -1420,7 +1423,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
             coachMarkArrowView!.plate.addConstraint(NSLayoutConstraint(item: coachMarkArrowView!.plate, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: adjustedWidth))
         case 2:
             coachMarkBodyView.hintLabel.text = NSLocalizedString("tutorial_camera", comment: "")
-            coachMarkBodyView.nextButton.setTitle("Ok!", for: UIControlState.normal)
+            coachMarkBodyView.nextButton.setTitle("Ok!", for: UIControl.State.normal)
             
             width = self.stretchView.clothes[0].imageView.bounds.width
             
@@ -1431,7 +1434,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
             coachMarkArrowView!.plate.addConstraint(NSLayoutConstraint(item: coachMarkArrowView!.plate, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: adjustedWidth))
         case 3:
             coachMarkBodyView.hintLabel.text = NSLocalizedString("tutorial_pinch", comment: "")
-            coachMarkBodyView.nextButton.setTitle("Ok!", for: UIControlState.normal)
+            coachMarkBodyView.nextButton.setTitle("Ok!", for: UIControl.State.normal)
             
             width = self.matcheeButtonOutlet.bounds.width
             
@@ -1442,7 +1445,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
             coachMarkArrowView!.plate.addConstraint(NSLayoutConstraint(item: coachMarkArrowView!.plate, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: adjustedWidth))
         case 4:
             coachMarkBodyView.hintLabel.text = NSLocalizedString("tutorial_match", comment: "")
-            coachMarkBodyView.nextButton.setTitle("Go!", for: UIControlState.normal)
+            coachMarkBodyView.nextButton.setTitle("Go!", for: UIControl.State.normal)
             
             width = self.matcheeButtonOutlet.bounds.width
             
@@ -1534,4 +1537,14 @@ extension UIColor
         
         return String(format: "#%02lX%02lX%02lX", lroundf(Float(r * 255)), lroundf(Float(g * 255)), lroundf(Float(b * 255)))
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }

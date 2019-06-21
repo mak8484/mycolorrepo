@@ -43,43 +43,43 @@ class MatchSettingsViewController: UIViewController, MFMailComposeViewController
         
         if complementary == 1{
             ButtonComplementary.isSelected = true
-            ButtonComplementary.setBackgroundImage(UIImage(named:"button_Complementary_Thick"), for: UIControlState.selected)
+            ButtonComplementary.setBackgroundImage(UIImage(named:"button_Complementary_Thick"), for: UIControl.State.selected)
         }
         else{
             ButtonComplementary.isSelected = false
-            ButtonComplementary.setBackgroundImage(UIImage(named:"button_Complementary"), for: UIControlState.selected)
+            ButtonComplementary.setBackgroundImage(UIImage(named:"button_Complementary"), for: UIControl.State.selected)
         }
         
         if mono == 1{
             ButtonMono.isSelected = true
-            ButtonMono.setBackgroundImage(UIImage(named:"button_Monochromatic_Thick"), for: UIControlState.selected)
+            ButtonMono.setBackgroundImage(UIImage(named:"button_Monochromatic_Thick"), for: UIControl.State.selected)
         }
         else{
             ButtonMono.isSelected = false
-            ButtonMono.setBackgroundImage(UIImage(named:"button_Monochromatic"), for: UIControlState.selected)
+            ButtonMono.setBackgroundImage(UIImage(named:"button_Monochromatic"), for: UIControl.State.selected)
         }
         
         if analogous == 1{
             ButtonAnalogous.isSelected = true
-            ButtonAnalogous.setBackgroundImage(UIImage(named:"button_Analogous_Thick"), for: UIControlState.selected)
+            ButtonAnalogous.setBackgroundImage(UIImage(named:"button_Analogous_Thick"), for: UIControl.State.selected)
         }
         else{
             ButtonAnalogous.isSelected = false
-            ButtonAnalogous.setBackgroundImage(UIImage(named:"button_Analogous"), for: UIControlState.selected)
+            ButtonAnalogous.setBackgroundImage(UIImage(named:"button_Analogous"), for: UIControl.State.selected)
         }
         
         if split == 1{
             ButtonSplitComplementary.isSelected = true
-            ButtonSplitComplementary.setBackgroundImage(UIImage(named:"button_SplitComplementary_Thick"), for: UIControlState.selected)
+            ButtonSplitComplementary.setBackgroundImage(UIImage(named:"button_SplitComplementary_Thick"), for: UIControl.State.selected)
         }
         else{
             if splitPurchased == 1 {
                 ButtonSplitComplementary.isSelected = false
-                ButtonSplitComplementary.setBackgroundImage(UIImage(named:"button_SplitComplementary"), for: UIControlState.normal)
+                ButtonSplitComplementary.setBackgroundImage(UIImage(named:"button_SplitComplementary"), for: UIControl.State.normal)
             }
             else{
                 ButtonSplitComplementary.isSelected = false
-                ButtonSplitComplementary.setBackgroundImage(UIImage(named:"button_SplitComplementary_Pay"), for: UIControlState.normal)
+                ButtonSplitComplementary.setBackgroundImage(UIImage(named:"button_SplitComplementary_Pay"), for: UIControl.State.normal)
             }
         }
 
@@ -98,13 +98,13 @@ class MatchSettingsViewController: UIViewController, MFMailComposeViewController
     @IBAction func ButtonComplementaryAction(_ sender: UIButton) {
         if sender.isSelected == false {
             sender.isSelected = true
-            sender.setBackgroundImage(UIImage(named:"button_Complementary_Thick"), for: UIControlState.selected)
+            sender.setBackgroundImage(UIImage(named:"button_Complementary_Thick"), for: UIControl.State.selected)
             UserDefaults.standard.set(1, forKey: "Matchee.complementaryCheck")
             UserDefaults.standard.synchronize()
         }
         else{
             sender.isSelected = false
-            sender.setBackgroundImage(UIImage(named:"button_Complementary"), for: UIControlState.selected)
+            sender.setBackgroundImage(UIImage(named:"button_Complementary"), for: UIControl.State.selected)
             UserDefaults.standard.set(0, forKey: "Matchee.complementaryCheck")
             UserDefaults.standard.synchronize()
         }
@@ -112,13 +112,13 @@ class MatchSettingsViewController: UIViewController, MFMailComposeViewController
     @IBAction func ButtonMonoAction(_ sender: UIButton) {
         if sender.isSelected == false {
             sender.isSelected = true
-            sender.setBackgroundImage(UIImage(named:"button_Monochromatic_Thick"), for: UIControlState.selected)
+            sender.setBackgroundImage(UIImage(named:"button_Monochromatic_Thick"), for: UIControl.State.selected)
             UserDefaults.standard.set(1, forKey: "Matchee.monochromaticCheck")
             UserDefaults.standard.synchronize()
         }
         else{
             sender.isSelected = false
-            sender.setBackgroundImage(UIImage(named:"button_Monochromatic"), for: UIControlState.selected)
+            sender.setBackgroundImage(UIImage(named:"button_Monochromatic"), for: UIControl.State.selected)
             UserDefaults.standard.set(0, forKey: "Matchee.monochromaticCheck")
             UserDefaults.standard.synchronize()
         }
@@ -126,13 +126,13 @@ class MatchSettingsViewController: UIViewController, MFMailComposeViewController
     @IBAction func ButtonAnalogousAction(_ sender: UIButton) {
         if sender.isSelected == false {
             sender.isSelected = true
-            sender.setBackgroundImage(UIImage(named:"button_Analogous_Thick"), for: UIControlState.selected)
+            sender.setBackgroundImage(UIImage(named:"button_Analogous_Thick"), for: UIControl.State.selected)
             UserDefaults.standard.set(1, forKey: "Matchee.analogousCheck")
             UserDefaults.standard.synchronize()
         }
         else{
             sender.isSelected = false
-            sender.setBackgroundImage(UIImage(named:"button_Analogous"), for: UIControlState.selected)
+            sender.setBackgroundImage(UIImage(named:"button_Analogous"), for: UIControl.State.selected)
             UserDefaults.standard.set(0, forKey: "Matchee.analogousCheck")
             UserDefaults.standard.synchronize()
         }
@@ -142,13 +142,13 @@ class MatchSettingsViewController: UIViewController, MFMailComposeViewController
         if UserDefaults.standard.integer(forKey: "Matchee.splitComplementaryPurchased") == 1{
             if sender.isSelected == false {
                 sender.isSelected = true
-                sender.setBackgroundImage(UIImage(named:"button_SplitComplementary_Thick"), for: UIControlState.selected)
+                sender.setBackgroundImage(UIImage(named:"button_SplitComplementary_Thick"), for: UIControl.State.selected)
                 UserDefaults.standard.set(1, forKey: "Matchee.splitComplementaryCheck")
                 UserDefaults.standard.synchronize()
             }
             else{
                 sender.isSelected = false
-                sender.setBackgroundImage(UIImage(named:"button_SplitComplementary"), for: UIControlState.normal)
+                sender.setBackgroundImage(UIImage(named:"button_SplitComplementary"), for: UIControl.State.normal)
                 UserDefaults.standard.set(0, forKey: "Matchee.splitComplementaryCheck")
                 UserDefaults.standard.synchronize()
             }

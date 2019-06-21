@@ -87,13 +87,13 @@ class KACircleCropViewController: UIViewController, UIScrollViewDelegate {
         label.lineBreakMode = .byTruncatingMiddle
 
         
-        okButton.setTitle("Ok", for: UIControlState())
-        okButton.setTitleColor(UIColor.white, for: UIControlState())
+        okButton.setTitle("Ok", for: UIControl.State())
+        okButton.setTitleColor(UIColor.white, for: UIControl.State())
         okButton.titleLabel?.font = backButton.titleLabel?.font.withSize(17)
         okButton.addTarget(self, action: #selector(didTapOk), for: .touchUpInside)
         
-        backButton.setTitle("<", for: UIControlState())
-        backButton.setTitleColor(UIColor.white, for: UIControlState())
+        backButton.setTitle("<", for: UIControl.State())
+        backButton.setTitleColor(UIColor.white, for: UIControl.State())
         backButton.titleLabel?.font = backButton.titleLabel?.font.withSize(30)
         backButton.addTarget(self, action: #selector(didTapBack), for: .touchUpInside)
         
@@ -149,7 +149,7 @@ class KACircleCropViewController: UIViewController, UIScrollViewDelegate {
     
     // MARK: Button taps
     
-    func didTapOk() {
+    @objc func didTapOk() {
         
 
         let newSize = CGSize(width: image.size.width*scrollView.zoomScale, height: image.size.height*scrollView.zoomScale)
@@ -165,7 +165,7 @@ class KACircleCropViewController: UIViewController, UIScrollViewDelegate {
         image.draw(in: sharpRect)
         let finalImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        if let imageData = UIImagePNGRepresentation(finalImage!) {
+        if let imageData = finalImage!.pngData() {
             if let pngImage = UIImage(data: imageData) {
                 delegate?.circleCropDidCropImage(pngImage)
             } else {
@@ -179,7 +179,7 @@ class KACircleCropViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
-    func didTapBack() {
+    @objc func didTapBack() {
         
         delegate?.circleCropDidCancel()
         

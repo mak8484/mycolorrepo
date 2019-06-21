@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OiU-RV-Lbi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OiU-RV-Lbi">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1485,26 +1485,26 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrowRight" width="200" height="200"/>
-        <image name="buttonGenderNotSelected" width="91" height="92"/>
-        <image name="buttonGenderNotSelectedHigh" width="500" height="500"/>
-        <image name="buttonGenderSelected" width="91" height="92"/>
-        <image name="buttonMatchee" width="300" height="300"/>
-        <image name="buttonShare" width="200" height="200"/>
-        <image name="button_Analogous" width="200" height="200"/>
-        <image name="button_Complementary" width="200" height="200"/>
-        <image name="button_Designers" width="300" height="300"/>
-        <image name="button_Monochromatic" width="1024" height="1024"/>
-        <image name="button_Settings" width="200" height="200"/>
-        <image name="button_SplitComplementary_Pay" width="200" height="200"/>
-        <image name="button_SplitComplementary_Thick" width="200" height="200"/>
-        <image name="designerTag" width="180" height="179.52000427246094"/>
+        <image name="arrowRight" width="100" height="100"/>
+        <image name="buttonGenderNotSelected" width="45.5" height="46"/>
+        <image name="buttonGenderNotSelectedHigh" width="250" height="250"/>
+        <image name="buttonGenderSelected" width="45.5" height="46"/>
+        <image name="buttonMatchee" width="150" height="150"/>
+        <image name="buttonShare" width="100" height="100"/>
+        <image name="button_Analogous" width="100" height="100"/>
+        <image name="button_Complementary" width="100" height="100"/>
+        <image name="button_Designers" width="150" height="150"/>
+        <image name="button_Monochromatic" width="512" height="512"/>
+        <image name="button_Settings" width="100" height="100"/>
+        <image name="button_SplitComplementary_Pay" width="100" height="100"/>
+        <image name="button_SplitComplementary_Thick" width="100" height="100"/>
+        <image name="designerTag" width="187.5" height="187"/>
         <image name="fontcolor_bar" width="284" height="76"/>
         <image name="logo" width="410" height="96"/>
-        <image name="men_acc_NOMatch" width="300" height="120"/>
-        <image name="men_all_NOMatch" width="300" height="120"/>
-        <image name="men_top_NOMatch" width="300" height="120"/>
-        <image name="pencil_white" width="99.839996337890625" height="99.839996337890625"/>
+        <image name="men_acc_NOMatch" width="150" height="60"/>
+        <image name="men_all_NOMatch" width="150" height="60"/>
+        <image name="men_top_NOMatch" width="150" height="60"/>
+        <image name="pencil_white" width="104" height="104"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="x4B-jP-whW"/>

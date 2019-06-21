@@ -301,7 +301,7 @@ public class Judex {
     init() {
         
 #if os(iOS)
-            NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
 #endif
         
         DispatchQueue.main.async(execute: configure)

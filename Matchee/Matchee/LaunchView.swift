@@ -24,7 +24,7 @@ class LaunchView: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        UIView.animate(withDuration: 0.5, delay: 1.0, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
+        UIView.animate(withDuration: 0.5, delay: 1.0, options: UIView.AnimationOptions.allowAnimatedContent, animations: {
             
             let screenHeight = UIScreen.main.bounds.height
             

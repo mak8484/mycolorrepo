@@ -29,7 +29,7 @@ class DesignerDetailsViewController: UIViewController,UIWebViewDelegate {
         if UIApplication.shared.canOpenURL(instagramUrl! as URL)
         {
             if designerISProfile != "" {
-                UIApplication.shared.open(instagramUrl! as URL, options: ["":""], completionHandler: nil)
+                UIApplication.shared.open(instagramUrl! as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary(["":""]), completionHandler: nil)
             }
         }
     }
@@ -58,4 +58,9 @@ class DesignerDetailsViewController: UIViewController,UIWebViewDelegate {
     @IBAction func closeButtonAction(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }
