@@ -53,6 +53,8 @@
 		A9BC0BC41E6178410032DA44 /* KACircleCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BC0BC11E6178410032DA44 /* KACircleCropViewController.swift */; };
 		A9BC0BCA1E61B0150032DA44 /* UIImage+AverageColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BC0BC91E61B0150032DA44 /* UIImage+AverageColor.m */; };
 		A9CCF17E1E34C74C0099C420 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CCF17D1E34C74C0099C420 /* Colours.swift */; };
+		A9DABC4A22BCC04900B62EC8 /* ClothesMen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DABC4922BCC04900B62EC8 /* ClothesMen.swift */; };
+		A9DABC4C22BCC18A00B62EC8 /* ClothesWomen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DABC4B22BCC18A00B62EC8 /* ClothesWomen.swift */; };
 		A9F7099D1E8FC6990076D378 /* DesignerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F7099C1E8FC6990076D378 /* DesignerDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +128,8 @@
 		A9BC0BC91E61B0150032DA44 /* UIImage+AverageColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AverageColor.m"; sourceTree = "<group>"; };
 		A9BC0BCB1E61B0360032DA44 /* UIImage+AverageColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+AverageColor.h"; sourceTree = "<group>"; };
 		A9CCF17D1E34C74C0099C420 /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
+		A9DABC4922BCC04900B62EC8 /* ClothesMen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesMen.swift; sourceTree = "<group>"; };
+		A9DABC4B22BCC18A00B62EC8 /* ClothesWomen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesWomen.swift; sourceTree = "<group>"; };
 		A9F7099C1E8FC6990076D378 /* DesignerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignerDetailsViewController.swift; sourceTree = "<group>"; };
 		A9F7099F1E8FCFCE0076D378 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
 		A9F709A01E8FD1F40076D378 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
@@ -282,6 +286,8 @@
 			children = (
 				A93FC3D81E2663970054D791 /* SkinColors.swift */,
 				A98661071E1BA259000EC785 /* Cloth.swift */,
+				A9DABC4922BCC04900B62EC8 /* ClothesMen.swift */,
+				A9DABC4B22BCC18A00B62EC8 /* ClothesWomen.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -529,6 +535,7 @@
 				A962835B1E3F7BCE005434D7 /* SweetAlertViewController.swift in Sources */,
 				A9BC0BC31E6178410032DA44 /* KACircleCropScrollView.swift in Sources */,
 				A9BC0BAE1E51B49F0032DA44 /* WebViewViewController.swift in Sources */,
+				A9DABC4A22BCC04900B62EC8 /* ClothesMen.swift in Sources */,
 				A9F7099D1E8FC6990076D378 /* DesignerDetailsViewController.swift in Sources */,
 				A93FC3D91E2663970054D791 /* SkinColors.swift in Sources */,
 				A96283551E3B81F6005434D7 /* GenderSelectionViewController.swift in Sources */,
@@ -542,6 +549,7 @@
 				A98661081E1BA259000EC785 /* Cloth.swift in Sources */,
 				A962834B1E39F0A4005434D7 /* MatchSettingsViewController.swift in Sources */,
 				A9BC0BB51E55ED630032DA44 /* ColorDetectorViewController.swift in Sources */,
+				A9DABC4C22BCC18A00B62EC8 /* ClothesWomen.swift in Sources */,
 				A98660F91E16A9FB000EC785 /* Colorize.swift in Sources */,
 				A987A4671E87EA13005D744C /* IAPTableViewController.swift in Sources */,
 				A9A44CFD1E13A98900ABFF49 /* stretchableView.swift in Sources */,
