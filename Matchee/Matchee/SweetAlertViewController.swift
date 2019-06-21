@@ -15,7 +15,7 @@ public enum AlertStyle {
     case customImag(imageFile:String)
 }
 
-open class SweetAlert: UIViewController {
+open class SweetAlertViewController: UIViewController {
     let kBakcgroundTansperancy: CGFloat = 0.7
     let kHeightMargin: CGFloat = 10.0
     let KTopMargin: CGFloat = 20.0
@@ -26,7 +26,7 @@ open class SweetAlert: UIViewController {
     let kButtonHeight: CGFloat = 35.0
     var textViewHeight: CGFloat = 90.0
     let kTitleHeight:CGFloat = 30.0
-    var strongSelf:SweetAlert?
+    var strongSelf:SweetAlertViewController?
     var contentView = UIView()
     var titleLabel: UILabel = UILabel()
     var buttons: [UIButton] = []
@@ -136,7 +136,7 @@ open class SweetAlert: UIViewController {
                 buttonX = buttons[i].frame.origin.x + kWidthMargin + buttonRect[i].size.width + 20.0
                 buttons[i].layer.cornerRadius = 5.0
                 self.contentView.addSubview(buttons[i])
-                buttons[i].addTarget(self, action: #selector(SweetAlert.pressed(_:)), for: UIControl.Event.touchUpInside)
+                buttons[i].addTarget(self, action: #selector(SweetAlertViewController.pressed(_:)), for: UIControl.Event.touchUpInside)
 
         }
         y += kHeightMargin + buttonRect[0].size.height + 10.0
@@ -205,24 +205,24 @@ open class SweetAlert: UIViewController {
         self.contentView = UIView()
     }
     
-    open func showAlert(_ title: String) -> SweetAlert {
+    open func showAlert(_ title: String) -> SweetAlertViewController {
         _ =  showAlert(title, subTitle: nil, style: .none)
         return self
     }
     
-    open func showAlert(_ title: String, subTitle: String?, style: AlertStyle) -> SweetAlert {
+    open func showAlert(_ title: String, subTitle: String?, style: AlertStyle) -> SweetAlertViewController {
         _ = showAlert(title, subTitle: subTitle, style: style, buttonTitle: "OK")
         return self
 
     }
 
-    open func showAlert(_ title: String, subTitle: String?, style: AlertStyle,buttonTitle: String, action: ((_ isOtherButton: Bool) -> Void)? = nil) -> SweetAlert {
+    open func showAlert(_ title: String, subTitle: String?, style: AlertStyle,buttonTitle: String, action: ((_ isOtherButton: Bool) -> Void)? = nil) -> SweetAlertViewController {
         _ = showAlert(title, subTitle: subTitle, style: style, buttonTitle: buttonTitle,buttonColor: UIColor.colorFromRGB(0xAEDEF4))
         userAction = action
         return self
     }
     
-    open func showAlert(_ title: String, subTitle: String?, style: AlertStyle,buttonTitle: String,buttonColor: UIColor,action: ((_ isOtherButton: Bool) -> Void)? = nil) -> SweetAlert {
+    open func showAlert(_ title: String, subTitle: String?, style: AlertStyle,buttonTitle: String,buttonColor: UIColor,action: ((_ isOtherButton: Bool) -> Void)? = nil) -> SweetAlertViewController {
         _ = showAlert(title, subTitle: subTitle, style: style, buttonTitle: buttonTitle,buttonColor: buttonColor,otherButtonTitle:
             nil)
         userAction = action
@@ -230,7 +230,7 @@ open class SweetAlert: UIViewController {
     }
 
     open func showAlert(_ title: String, subTitle: String?, style: AlertStyle,buttonTitle: String,buttonColor: UIColor,otherButtonTitle:
-        String?, action: ((_ isOtherButton: Bool) -> Void)? = nil) -> SweetAlert {
+        String?, action: ((_ isOtherButton: Bool) -> Void)? = nil) -> SweetAlertViewController {
             self.showAlert(title, subTitle: subTitle, style: style, buttonTitle: buttonTitle,buttonColor: buttonColor,otherButtonTitle:
                 otherButtonTitle,otherButtonColor: UIColor.red)
             userAction = action
@@ -284,7 +284,7 @@ open class SweetAlert: UIViewController {
                 let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
                 button.setTitle(otherButtonTitle, for: UIControl.State())
                 button.backgroundColor = otherButtonColor
-                button.addTarget(self, action: #selector(SweetAlert.pressed(_:)), for: UIControl.Event.touchUpInside)
+                button.addTarget(self, action: #selector(SweetAlertViewController.pressed(_:)), for: UIControl.Event.touchUpInside)
                 button.tag = 1
                 buttons.append(button)
             }

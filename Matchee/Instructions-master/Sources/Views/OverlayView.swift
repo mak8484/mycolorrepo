@@ -36,7 +36,7 @@ public class OverlayView: UIView {
     /// Setting this property to anything but `nil` will
     /// enable the effect. `overlayColor` will be ignored if this
     /// property is set.
-    public var blurEffectStyle: UIBlurEffectStyle? {
+    public var blurEffectStyle: UIBlurEffect.Style? {
         didSet {
             if self.blurEffectStyle != oldValue {
                 self.destroyBlurView()

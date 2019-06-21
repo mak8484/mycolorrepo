@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class Storage: NSObject {
+class StorageManager: NSObject {
 
     // MARK: Storage
     

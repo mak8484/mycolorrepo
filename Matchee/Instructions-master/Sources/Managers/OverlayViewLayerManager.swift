@@ -49,7 +49,7 @@ class OverlayViewLayerManager {
         animation.fromValue = 1.0
         animation.toValue = 0.0
         animation.duration = duration
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animation.isRemovedOnCompletion = true
 
         fullMaskLayer.add(animation, forKey: "opacityAnimationFadeIn")
@@ -66,7 +66,7 @@ class OverlayViewLayerManager {
         animation.fromValue = 0.0
         animation.toValue = 1.0
         animation.duration = duration
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animation.isRemovedOnCompletion = true
 
         self.fullMaskLayer.add(animation, forKey: "opacityAnimationFadeOut")
@@ -99,7 +99,7 @@ private extension OverlayViewLayerManager {
     func configureCutoutMask(usingCutoutPath cutoutPath: UIBezierPath) {
         cutoutMaskLayer = CAShapeLayer()
         cutoutMaskLayer.name = "cutoutMaskLayer"
-        cutoutMaskLayer.fillRule = kCAFillRuleEvenOdd
+        cutoutMaskLayer.fillRule = CAShapeLayerFillRule.evenOdd
         cutoutMaskLayer.frame = managedLayer.frame
 
         let cutoutMaskLayerPath = UIBezierPath()
@@ -112,7 +112,7 @@ private extension OverlayViewLayerManager {
     func configureFullMask() {
         fullMaskLayer = CAShapeLayer()
         fullMaskLayer.name = "fullMaskLayer"
-        fullMaskLayer.fillRule = kCAFillRuleEvenOdd
+        fullMaskLayer.fillRule = CAShapeLayerFillRule.evenOdd
         fullMaskLayer.frame = managedLayer.frame
         fullMaskLayer.opacity = 1.0
 

@@ -24,7 +24,7 @@ import UIKit
 
 // swiftlint:disable line_length
 class BlurEffectViewHelper {
-    func makeBlurEffectView(style: UIBlurEffectStyle) -> UIVisualEffectView {
+    func makeBlurEffectView(style: UIBlurEffect.Style) -> UIVisualEffectView {
         let blurEffect = UIBlurEffect(style: style)
 
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -39,8 +39,8 @@ class BlurEffectViewHelper {
 
         var constraints = [NSLayoutConstraint]()
 
-        constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": view])
-        constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": view])
+        constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["view": view])
+        constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["view": view])
 
         parent.addConstraints(constraints)
     }

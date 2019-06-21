@@ -113,13 +113,13 @@ class stretchableView: UIImageView {
     }
     
     func saveCurrentUsedClothes(){
-        let storageManager = Storage()
+        let storageManager = StorageManager()
         storageManager.storeCurrentClothesSet(clothesArray: clothes)
         
     }
     
     func restoreCurrentUsedClothes() -> Bool{
-        let storageManager = Storage()
+        let storageManager = StorageManager()
         let clothesSet = storageManager.getCurrentClothingSet()
         
         if clothesSet.count > 0 {

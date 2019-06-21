@@ -41,7 +41,7 @@ class CoachMarkInnerLayoutHelper {
 
         return NSLayoutConstraint.constraints(
             withVisualFormat: "H:|[bodyView]|",
-            options: NSLayoutFormatOptions(rawValue: 0),
+            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil,
             views: ["bodyView": body]
         )

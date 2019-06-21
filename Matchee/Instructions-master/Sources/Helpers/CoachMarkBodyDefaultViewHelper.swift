@@ -32,7 +32,7 @@ open class CoachMarkBodyDefaultViewHelper {
     -> [NSLayoutConstraint] {
         return NSLayoutConstraint.constraints(
             withVisualFormat: "H:|-(10)-[hintLabel]-(10)-[separator(==1)][nextLabel(==55)]|",
-            options: NSLayoutFormatOptions(rawValue: 0), metrics: nil,
+            options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil,
             views: ["hintLabel": views.hintLabel, "separator": views.separator,
                     "nextLabel": views.nextLabel]
         )
@@ -40,7 +40,7 @@ open class CoachMarkBodyDefaultViewHelper {
 
     func makeVerticalConstraints(for hint: UITextView) -> [NSLayoutConstraint] {
         return NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-(5)-[hint]-(5)-|", options: NSLayoutFormatOptions(rawValue: 0),
+            withVisualFormat: "V:|-(5)-[hint]-(5)-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil, views: ["hint": hint]
         )
     }
@@ -53,9 +53,9 @@ open class CoachMarkBodyDefaultViewHelper {
 
         var constraints = [NSLayoutConstraint]()
 
-        constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|[background]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["background": background])
+        constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|[background]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["background": background])
 
-        constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[background]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["background": background])
+        constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[background]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["background": background])
 
         parent.addConstraints(constraints)
     }
@@ -75,7 +75,7 @@ open class CoachMarkBodyDefaultViewHelper {
         configureHint(hint, addTo: parent)
 
         parent.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-(10)-[hintLabel]-(10)-|", options: NSLayoutFormatOptions(rawValue: 0),
+            withVisualFormat: "H:|-(10)-[hintLabel]-(10)-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil, views: ["hintLabel": hint]
         ))
     }
@@ -89,7 +89,7 @@ open class CoachMarkBodyDefaultViewHelper {
         parent.addSubview(next)
 
         parent.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|[nextLabel]|", options: NSLayoutFormatOptions(rawValue: 0),
+            withVisualFormat: "V:|[nextLabel]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil, views: ["nextLabel": next]
         ))
     }
@@ -102,7 +102,7 @@ open class CoachMarkBodyDefaultViewHelper {
         parent.addSubview(separator)
 
         parent.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|-(15)-[separator]-(15)-|", options: NSLayoutFormatOptions(rawValue: 0),
+            withVisualFormat: "V:|-(15)-[separator]-(15)-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil, views: ["separator": separator]
         ))
     }

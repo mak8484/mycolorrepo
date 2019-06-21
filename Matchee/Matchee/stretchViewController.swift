@@ -141,7 +141,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
         addGestureRecognizers()
         addNotifications()
         
-        let storageManager = Storage()
+        let storageManager = StorageManager()
         storageManager.initClothesStorage()
         
         horizontalColorPicker.delegate = self
@@ -814,7 +814,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
         
         self.changeToManButton.setBackgroundImage(UIImage(named:"buttonGenderSelected"), for: UIControl.State.normal)
         self.changeToWomanButton.setBackgroundImage(UIImage(named:"buttonGenderNotSelected"), for: UIControl.State.normal)
-        let storageManager = Storage()
+        let storageManager = StorageManager()
         let clothInstance:Cloth = Cloth()
         var clothes:[Cloth] = [Cloth]()
         //Load saved clothes
@@ -847,7 +847,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
         
         self.changeToManButton.setBackgroundImage(UIImage(named:"buttonGenderNotSelected"), for: UIControl.State.normal)
         self.changeToWomanButton.setBackgroundImage(UIImage(named:"buttonGenderSelected"), for: UIControl.State.normal)
-        let storageManager = Storage()
+        let storageManager = StorageManager()
         let clothInstance:Cloth = Cloth()
         var clothes:[Cloth] = [Cloth]()
         //Load saved clothes
@@ -1194,7 +1194,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
      func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        let storageManager = Storage()
+        let storageManager = StorageManager()
         let storedSets = storageManager.getNumberOfExistingSets()
         return storedSets + 1
     }
@@ -1217,7 +1217,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
             
             cell.maskImage.image = UIImage(named: "mask")
             
-            let storageManager = Storage()
+            let storageManager = StorageManager()
             let clothesSets = storageManager.getAllClothingSets()
             var clothes:[Clothes] = [Clothes]()
             
@@ -1258,7 +1258,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
-        let storageManager = Storage()
+        let storageManager = StorageManager()
         
        // collectionView.reloadData()
         
@@ -1268,7 +1268,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         
         if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section)-1 {
             
-            SweetAlert().showAlert(NSLocalizedString("SaveStylePopup_Title", comment: "") , subTitle: NSLocalizedString("SaveStylePopup_SubTitle", comment: ""), style: AlertStyle.none, buttonTitle:NSLocalizedString("SaveStylePopup_Cancel", comment: ""), buttonColor:UIColor(red: 217/255.0, green: 144/255.0, blue: 134/255.0, alpha: 1.0) , otherButtonTitle:NSLocalizedString("SaveStylePopup_Ok", comment: ""), otherButtonColor: UIColor(red: 133/255.0, green: 214/255.0, blue: 168/255.0, alpha: 1.0)) { (isOtherButton) -> Void in
+            SweetAlertViewController().showAlert(NSLocalizedString("SaveStylePopup_Title", comment: "") , subTitle: NSLocalizedString("SaveStylePopup_SubTitle", comment: ""), style: AlertStyle.none, buttonTitle:NSLocalizedString("SaveStylePopup_Cancel", comment: ""), buttonColor:UIColor(red: 217/255.0, green: 144/255.0, blue: 134/255.0, alpha: 1.0) , otherButtonTitle:NSLocalizedString("SaveStylePopup_Ok", comment: ""), otherButtonColor: UIColor(red: 133/255.0, green: 214/255.0, blue: 168/255.0, alpha: 1.0)) { (isOtherButton) -> Void in
                 if isOtherButton == true {
                     print("Cancel Button Pressed")
                 }
@@ -1277,12 +1277,12 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                     let result = storageManager.storeClothesSet(clothesArray: self.stretchView.clothes)
                     
                     if result {
-                        _ = SweetAlert().showAlert(NSLocalizedString("SaveStylePopup_Saved", comment: ""), subTitle: NSLocalizedString("SaveStylePopup_SavedTitle", comment: ""), style: AlertStyle.success)
+                        _ = SweetAlertViewController().showAlert(NSLocalizedString("SaveStylePopup_Saved", comment: ""), subTitle: NSLocalizedString("SaveStylePopup_SavedTitle", comment: ""), style: AlertStyle.success)
                         self.storedSetsColors.removeAll()
                         collectionView.reloadData()
                     }
                     else{
-                        _ = SweetAlert().showAlert(NSLocalizedString("SaveStylePopup_NotSaved", comment: ""), subTitle: NSLocalizedString("SaveStylePopup_NotSavedTitle", comment: ""), style: AlertStyle.error)
+                        _ = SweetAlertViewController().showAlert(NSLocalizedString("SaveStylePopup_NotSaved", comment: ""), subTitle: NSLocalizedString("SaveStylePopup_NotSavedTitle", comment: ""), style: AlertStyle.error)
                     }
                 }
             }

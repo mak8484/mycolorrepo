@@ -152,7 +152,7 @@ class CoachMarkDisplayManager {
         parentView.addConstraints(
             NSLayoutConstraint.constraints(
                 withVisualFormat: "H:[currentCoachMarkView(<=\(coachMark.maxWidth))]",
-                options: NSLayoutFormatOptions(rawValue: 0),
+                options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil,
                 views: ["currentCoachMarkView": coachMarkView]
             )

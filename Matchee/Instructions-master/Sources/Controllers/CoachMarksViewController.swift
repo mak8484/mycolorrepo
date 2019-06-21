@@ -243,15 +243,15 @@ extension CoachMarksViewController {
     }
 
     // MARK: - Private methods
-    fileprivate func registerForStatusBarFrameChanges() {
-        let center = NotificationCenter.default
-
-        center.addObserver(self, selector: #selector(prepareForStatusBarChange),
-                           name: .UIApplicationWillChangeStatusBarFrame, object: nil)
-
-        center.addObserver(self, selector: #selector(restoreAfterStatusBarChangeDidComplete),
-                           name: .UIApplicationDidChangeStatusBarFrame, object: nil)
-    }
+//    fileprivate func registerForStatusBarFrameChanges() {
+//        let center = NotificationCenter.default
+//
+//        center.addObserver(self, selector: #selector(prepareForStatusBarChange),
+//                           name: .UIApplication.willChangeStatusBarFrameNotification, object: nil)
+//
+//        center.addObserver(self, selector: #selector(restoreAfterStatusBarChangeDidComplete),
+//                           name: .UIApplication.didChangeStatusBarFrameNotification, object: nil)
+//    }
 
     fileprivate func unregisterFromStatusBarFrameChanges() {
         NotificationCenter.default.removeObserver(self)
@@ -287,9 +287,9 @@ extension CoachMarksViewController {
             return
         }
 
-        registerForStatusBarFrameChanges()
+        //registerForStatusBarFrameChanges()
 
-        parentViewController.addChildViewController(self)
+        parentViewController.addChild(self)
         parentViewController.view.addSubview(self.view)
 
         addRootView(to: window)
@@ -307,16 +307,16 @@ extension CoachMarksViewController {
             window.layoutIfNeeded()
         #endif
 
-        self.didMove(toParentViewController: parentViewController)
+        self.didMove(toParent: parentViewController)
 
     }
 
     /// Detach the controller from its parent view controller.
     func detachFromParentViewController() {
         self.instructionsRootView.removeFromSuperview()
-        self.willMove(toParentViewController: nil)
+        self.willMove(toParent: nil)
         self.view.removeFromSuperview()
-        self.removeFromParentViewController()
+        self.removeFromParent()
         unregisterFromStatusBarFrameChanges()
     }
 }

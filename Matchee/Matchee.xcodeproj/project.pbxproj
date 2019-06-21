@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		341D18FBEA896D680900CB7F /* Pods_Matchee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA6D5B94F173F1D5D400F68 /* Pods_Matchee.framework */; };
 		A93FC3D51E2386B40054D791 /* ClothesStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A93FC3D31E2386B40054D791 /* ClothesStorage.xcdatamodeld */; };
-		A93FC3D71E23E9C50054D791 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FC3D61E23E9C50054D791 /* Storage.swift */; };
+		A93FC3D71E23E9C50054D791 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FC3D61E23E9C50054D791 /* StorageManager.swift */; };
 		A93FC3D91E2663970054D791 /* SkinColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FC3D81E2663970054D791 /* SkinColors.swift */; };
 		A950B0A21E0577D200233EFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A950B0A11E0577D200233EFB /* AppDelegate.swift */; };
 		A950B0A71E0577D200233EFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A950B0A51E0577D200233EFB /* Main.storyboard */; };
@@ -22,7 +22,7 @@
 		A96283551E3B81F6005434D7 /* GenderSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96283541E3B81F6005434D7 /* GenderSelectionViewController.swift */; };
 		A96283581E3B8FE7005434D7 /* StyleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96283561E3B8FE7005434D7 /* StyleCollectionViewCell.swift */; };
 		A96283591E3B8FE7005434D7 /* StyleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A96283571E3B8FE7005434D7 /* StyleCollectionViewCell.xib */; };
-		A962835B1E3F7BCE005434D7 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962835A1E3F7BCE005434D7 /* SweetAlert.swift */; };
+		A962835B1E3F7BCE005434D7 /* SweetAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962835A1E3F7BCE005434D7 /* SweetAlertViewController.swift */; };
 		A962835F1E41DAB4005434D7 /* FlyingCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962835D1E41DAB4005434D7 /* FlyingCellViewController.swift */; };
 		A96283601E41DAB4005434D7 /* FlyingCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A962835E1E41DAB4005434D7 /* FlyingCellViewController.xib */; };
 		A98660F91E16A9FB000EC785 /* Colorize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98660F81E16A9FB000EC785 /* Colorize.swift */; };
@@ -72,7 +72,7 @@
 
 /* Begin PBXFileReference section */
 		A93FC3D41E2386B40054D791 /* ClothesStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClothesStorage.xcdatamodel; sourceTree = "<group>"; };
-		A93FC3D61E23E9C50054D791 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		A93FC3D61E23E9C50054D791 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		A93FC3D81E2663970054D791 /* SkinColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkinColors.swift; sourceTree = "<group>"; };
 		A950B09E1E0577D200233EFB /* Matchee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A950B0A11E0577D200233EFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		A96283541E3B81F6005434D7 /* GenderSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderSelectionViewController.swift; sourceTree = "<group>"; };
 		A96283561E3B8FE7005434D7 /* StyleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleCollectionViewCell.swift; sourceTree = "<group>"; };
 		A96283571E3B8FE7005434D7 /* StyleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StyleCollectionViewCell.xib; sourceTree = "<group>"; };
-		A962835A1E3F7BCE005434D7 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		A962835A1E3F7BCE005434D7 /* SweetAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlertViewController.swift; sourceTree = "<group>"; };
 		A962835D1E41DAB4005434D7 /* FlyingCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlyingCellViewController.swift; sourceTree = "<group>"; };
 		A962835E1E41DAB4005434D7 /* FlyingCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlyingCellViewController.xib; sourceTree = "<group>"; };
 		A98660F81E16A9FB000EC785 /* Colorize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colorize.swift; sourceTree = "<group>"; };
@@ -172,19 +172,11 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A93FC3D11E2382840054D791 /* Cloth class */ = {
-			isa = PBXGroup;
-			children = (
-				A98661071E1BA259000EC785 /* Cloth.swift */,
-			);
-			name = "Cloth class";
-			sourceTree = "<group>";
-		};
 		A93FC3D21E2382BB0054D791 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
 				A93FC3D31E2386B40054D791 /* ClothesStorage.xcdatamodeld */,
-				A93FC3D61E23E9C50054D791 /* Storage.swift */,
+				A93FC3D61E23E9C50054D791 /* StorageManager.swift */,
 			);
 			name = Storage;
 			sourceTree = "<group>";
@@ -210,74 +202,56 @@
 		A950B0A01E0577D200233EFB /* Matchee */ = {
 			isa = PBXGroup;
 			children = (
-				A9963F811E4B610E00CB2CF5 /* Matchee.entitlements */,
 				A950B0A11E0577D200233EFB /* AppDelegate.swift */,
-				A950B0A51E0577D200233EFB /* Main.storyboard */,
-				A9BC0BA71E4F5A5C0032DA44 /* Localizable.strings */,
-				A950B0AA1E0577D200233EFB /* LaunchScreen.storyboard */,
-				A986610B1E20EC0D000EC785 /* LaunchView.swift */,
-				A9A44CFC1E13A98900ABFF49 /* stretchableView.swift */,
-				A9A44CFE1E13AF3B00ABFF49 /* stretchViewController.swift */,
-				A962834A1E39F0A4005434D7 /* MatchSettingsViewController.swift */,
-				A96283541E3B81F6005434D7 /* GenderSelectionViewController.swift */,
-				A9BC0BAD1E51B49F0032DA44 /* WebViewViewController.swift */,
-				A9F7099C1E8FC6990076D378 /* DesignerDetailsViewController.swift */,
-				A98661021E16DC76000EC785 /* Color utilities */,
-				A93FC3D11E2382840054D791 /* Cloth class */,
-				A987A4651E87E9F1005D744C /* IAP */,
+				A9DABC4122BCB9DB00B62EC8 /* Models */,
+				A9DABC4222BCB9F300B62EC8 /* Views */,
+				A9DABC4322BCBA1F00B62EC8 /* Controllers */,
+				A9BC0BB71E55ED680032DA44 /* Color detector */,
+				A98661021E16DC76000EC785 /* Color matching */,
 				A93FC3D21E2382BB0054D791 /* Storage */,
-				A950B0A81E0577D200233EFB /* Assets.xcassets */,
+				A987A4651E87E9F1005D744C /* In App Purchases */,
+				A9DABC4722BCBC7700B62EC8 /* Ads */,
+				A9DABC4422BCBA7300B62EC8 /* Resources */,
+				A9DABC4522BCBB4C00B62EC8 /* Extensions */,
+				A9DABC4822BCBCCC00B62EC8 /* App reviews */,
+				A9BC0BA71E4F5A5C0032DA44 /* Localizable.strings */,
 				A950B0AD1E0577D200233EFB /* Info.plist */,
-				A962834C1E3A2DBE005434D7 /* GoogleService-Info.plist */,
-				A962835C1E41DA88005434D7 /* Custom views and cells */,
-				A962835A1E3F7BCE005434D7 /* SweetAlert.swift */,
-				A987A45E1E87DB0C005D744C /* Judex.bundle */,
-				A987A45F1E87DB0C005D744C /* Judex.swift */,
+				A96283511E3A30ED005434D7 /* Matchee-Bridging-Header.h */,
+				A9963F811E4B610E00CB2CF5 /* Matchee.entitlements */,
 			);
 			path = Matchee;
 			sourceTree = "<group>";
 		};
-		A962835C1E41DA88005434D7 /* Custom views and cells */ = {
+		A962835C1E41DA88005434D7 /* Custom views  */ = {
 			isa = PBXGroup;
 			children = (
-				A96283561E3B8FE7005434D7 /* StyleCollectionViewCell.swift */,
-				A96283571E3B8FE7005434D7 /* StyleCollectionViewCell.xib */,
-				A962835D1E41DAB4005434D7 /* FlyingCellViewController.swift */,
-				A962835E1E41DAB4005434D7 /* FlyingCellViewController.xib */,
+				A99991191E670578007B61AD /* DTColorPickerImageView.h */,
+				A999911A1E670578007B61AD /* DTColorPickerImageView.m */,
+				A986610B1E20EC0D000EC785 /* LaunchView.swift */,
+				A9A44CFC1E13A98900ABFF49 /* stretchableView.swift */,
 				A9963F7D1E4A0B8400CB2CF5 /* CustomCoachMarkArrowView.swift */,
 				A9963F7E1E4A0B8400CB2CF5 /* CustomCoachMarkBodyView.swift */,
 			);
-			name = "Custom views and cells";
+			name = "Custom views ";
 			sourceTree = "<group>";
 		};
-		A98661021E16DC76000EC785 /* Color utilities */ = {
+		A98661021E16DC76000EC785 /* Color matching */ = {
 			isa = PBXGroup;
 			children = (
-				A9BC0BCB1E61B0360032DA44 /* UIImage+AverageColor.h */,
-				A9BC0BC91E61B0150032DA44 /* UIImage+AverageColor.m */,
-				A962834E1E3A30AA005434D7 /* UIColor+Mixing.h */,
-				A962834F1E3A30AA005434D7 /* UIColor+Mixing.m */,
 				A98660F81E16A9FB000EC785 /* Colorize.swift */,
 				A98661091E1FF329000EC785 /* MatchColors.swift */,
-				A93FC3D81E2663970054D791 /* SkinColors.swift */,
 				A96283521E3B56CD005434D7 /* SwiftHUEColorPicker.swift */,
 				A9CCF17D1E34C74C0099C420 /* Colours.swift */,
-				A99991171E670578007B61AD /* UIImage+ColorPicker.h */,
-				A99991181E670578007B61AD /* UIImage+ColorPicker.m */,
-				A99991191E670578007B61AD /* DTColorPickerImageView.h */,
-				A999911A1E670578007B61AD /* DTColorPickerImageView.m */,
-				A96283511E3A30ED005434D7 /* Matchee-Bridging-Header.h */,
-				A9BC0BB71E55ED680032DA44 /* Color detector */,
 			);
-			name = "Color utilities";
+			name = "Color matching";
 			sourceTree = "<group>";
 		};
-		A987A4651E87E9F1005D744C /* IAP */ = {
+		A987A4651E87E9F1005D744C /* In App Purchases */ = {
 			isa = PBXGroup;
 			children = (
 				A987A4661E87EA13005D744C /* IAPTableViewController.swift */,
 			);
-			name = IAP;
+			name = "In App Purchases";
 			sourceTree = "<group>";
 		};
 		A9BC0BB71E55ED680032DA44 /* Color detector */ = {
@@ -301,6 +275,88 @@
 				A9BC0BC11E6178410032DA44 /* KACircleCropViewController.swift */,
 			);
 			name = Cropper;
+			sourceTree = "<group>";
+		};
+		A9DABC4122BCB9DB00B62EC8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A93FC3D81E2663970054D791 /* SkinColors.swift */,
+				A98661071E1BA259000EC785 /* Cloth.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A9DABC4222BCB9F300B62EC8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9DABC4622BCBB8800B62EC8 /* Cells */,
+				A962835C1E41DA88005434D7 /* Custom views  */,
+				A950B0A51E0577D200233EFB /* Main.storyboard */,
+				A950B0AA1E0577D200233EFB /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A9DABC4322BCBA1F00B62EC8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A962835A1E3F7BCE005434D7 /* SweetAlertViewController.swift */,
+				A9A44CFE1E13AF3B00ABFF49 /* stretchViewController.swift */,
+				A962834A1E39F0A4005434D7 /* MatchSettingsViewController.swift */,
+				A96283541E3B81F6005434D7 /* GenderSelectionViewController.swift */,
+				A9BC0BAD1E51B49F0032DA44 /* WebViewViewController.swift */,
+				A9F7099C1E8FC6990076D378 /* DesignerDetailsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A9DABC4422BCBA7300B62EC8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A950B0A81E0577D200233EFB /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A9DABC4522BCBB4C00B62EC8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A99991171E670578007B61AD /* UIImage+ColorPicker.h */,
+				A99991181E670578007B61AD /* UIImage+ColorPicker.m */,
+				A9BC0BCB1E61B0360032DA44 /* UIImage+AverageColor.h */,
+				A9BC0BC91E61B0150032DA44 /* UIImage+AverageColor.m */,
+				A962834E1E3A30AA005434D7 /* UIColor+Mixing.h */,
+				A962834F1E3A30AA005434D7 /* UIColor+Mixing.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A9DABC4622BCBB8800B62EC8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A96283561E3B8FE7005434D7 /* StyleCollectionViewCell.swift */,
+				A96283571E3B8FE7005434D7 /* StyleCollectionViewCell.xib */,
+				A962835D1E41DAB4005434D7 /* FlyingCellViewController.swift */,
+				A962835E1E41DAB4005434D7 /* FlyingCellViewController.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		A9DABC4722BCBC7700B62EC8 /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				A962834C1E3A2DBE005434D7 /* GoogleService-Info.plist */,
+			);
+			name = Ads;
+			sourceTree = "<group>";
+		};
+		A9DABC4822BCBCCC00B62EC8 /* App reviews */ = {
+			isa = PBXGroup;
+			children = (
+				A987A45E1E87DB0C005D744C /* Judex.bundle */,
+				A987A45F1E87DB0C005D744C /* Judex.swift */,
+			);
+			name = "App reviews";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +414,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				it,
@@ -465,11 +522,11 @@
 				A999911B1E670578007B61AD /* UIImage+ColorPicker.m in Sources */,
 				A9963F801E4A0B8400CB2CF5 /* CustomCoachMarkBodyView.swift in Sources */,
 				A986610C1E20EC0D000EC785 /* LaunchView.swift in Sources */,
-				A93FC3D71E23E9C50054D791 /* Storage.swift in Sources */,
+				A93FC3D71E23E9C50054D791 /* StorageManager.swift in Sources */,
 				A962835F1E41DAB4005434D7 /* FlyingCellViewController.swift in Sources */,
 				A9BC0BC41E6178410032DA44 /* KACircleCropViewController.swift in Sources */,
 				A950B0A21E0577D200233EFB /* AppDelegate.swift in Sources */,
-				A962835B1E3F7BCE005434D7 /* SweetAlert.swift in Sources */,
+				A962835B1E3F7BCE005434D7 /* SweetAlertViewController.swift in Sources */,
 				A9BC0BC31E6178410032DA44 /* KACircleCropScrollView.swift in Sources */,
 				A9BC0BAE1E51B49F0032DA44 /* WebViewViewController.swift in Sources */,
 				A9F7099D1E8FC6990076D378 /* DesignerDetailsViewController.swift in Sources */,
@@ -655,7 +712,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Matchee/Matchee-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -683,7 +740,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Matchee/Matchee-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
