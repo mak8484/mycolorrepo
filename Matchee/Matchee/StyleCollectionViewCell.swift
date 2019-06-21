@@ -23,7 +23,6 @@ class StyleCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
     }
     
     public func updateCellColors(){
@@ -32,13 +31,10 @@ class StyleCollectionViewCell: UICollectionViewCell {
         beltColor.backgroundColor = beltColorValue
         bottomColor.backgroundColor = bottomColorValue
         shoesColor.backgroundColor = shoesColorValue
-    
     }
     
     @IBAction func styleSelectedAction(_ sender: UIButton) {
-        
         print(sender.tag)
-        
     }
     
 

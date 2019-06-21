@@ -28,24 +28,10 @@ class FlyingCellViewController: UIViewController {
         beltView.backgroundColor = beltColorValue
         bottomView.backgroundColor = bottomColorValue
         shoesView.backgroundColor = shoesColorValue
-        // Do any additional setup after loading the view.
     }
-    
-//    class func instanceFromNib() -> UIView {
-//        return UINib(nibName: "FlyingCellViewController", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    public func updateCellColors(){
-        
-
-        
-    }
-
-
 }
