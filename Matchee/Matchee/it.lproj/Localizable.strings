@@ -39,5 +39,5 @@
 "settings_sendIdeasButton" = "Manda feedback e idee";
 
 //Color matching
-"MatchColors_NoMatch" = "Non combinano";
-"MatchColors_Match" = "Combinano!";
+"MatchColors_NoMatch" = "I colori non combinano";
+"MatchColors_Match" = "I colori combinano!";

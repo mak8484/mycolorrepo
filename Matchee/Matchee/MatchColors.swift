@@ -19,22 +19,25 @@ enum colorMatchingAlgorithms{
 
 }
 
-struct matchingCriterias {
-    public var complementaryColorDegrees:CGFloat = 30.0
-    public var minimumSaturation:CGFloat = 0.02
-    public var monoChromaticHueDifference:CGFloat = 0.02
-    public var analogousAngle:CGFloat = 30.0
-    public var triadicAngle:CGFloat = 5.0
+struct MatchingCriterias {
+    public static let complementaryColorDegrees:CGFloat = 20.0
+    public static let minimumSaturation:CGFloat = 0.02
+    public static let monoChromaticHueDifference:CGFloat = 0.035
+    public static let analogousAngle:CGFloat = 30.0
+    public static let triadicAngle:CGFloat = 5.0
+    public static let hueSimilarityAccessories:CGFloat = 2.0
+    public static let brightnessSimilarityAccessories:CGFloat = 0.2
+    public static let howAnalogousCriteria:CGFloat = 0.10
 }
 
-
+/////////////////////!!!!!!!!!!!!!!!!!!!!!!////
+// Note that all calcuation are in RGB space //
+/////////////////////!!!!!!!!!!!!!!!!!!!!!!////
 class MatchColors: NSObject {
     
     public var chosenAlgorithm:colorMatchingAlgorithms = colorMatchingAlgorithms.complementaryColorRGB
     
     func matchGlobal(topColor:UIColor, beltColor:UIColor, bottomColor:UIColor, shoesColor:UIColor, skinColor:UIColor)->String{
-        
-        let criterias = matchingCriterias()
         
         switch chosenAlgorithm {
         case .complementaryColorRGB:
@@ -51,24 +54,24 @@ class MatchColors: NSObject {
             var hueCheckResultBottomBelt:CGFloat = 0
             var hueCheckResultBottomShoes:CGFloat = 0
 
-            if topHSBA.s > criterias.minimumSaturation && bottomHSBA.s > criterias.minimumSaturation {
-                hueCheckResultClothes = howComplementaryAreTwoHuesinRGB(color1: topColor, color2: bottomColor)
+            if topHSBA.s > MatchingCriterias.minimumSaturation && bottomHSBA.s > MatchingCriterias.minimumSaturation {
+                hueCheckResultClothes = checkHUEsComplementarityInRGB(color1: topColor, color2: bottomColor)
                 consideredChecks += 1
             }
-            if topHSBA.s > criterias.minimumSaturation && beltHSBA.s > criterias.minimumSaturation {
-                hueCheckResultTopBelt = howComplementaryAreTwoHuesinRGB(color1: topColor, color2: beltColor)
+            if topHSBA.s > MatchingCriterias.minimumSaturation && beltHSBA.s > MatchingCriterias.minimumSaturation {
+                hueCheckResultTopBelt = checkHUEsComplementarityInRGB(color1: topColor, color2: beltColor)
                 consideredChecks += 1
             }
-            if topHSBA.s > criterias.minimumSaturation && shoesHSBA.s > criterias.minimumSaturation {
-                hueCheckResultTopShoes = howComplementaryAreTwoHuesinRGB(color1: topColor, color2: shoesColor)
+            if topHSBA.s > MatchingCriterias.minimumSaturation && shoesHSBA.s > MatchingCriterias.minimumSaturation {
+                hueCheckResultTopShoes = checkHUEsComplementarityInRGB(color1: topColor, color2: shoesColor)
                 consideredChecks += 1
             }
-            if bottomHSBA.s > criterias.minimumSaturation && beltHSBA.s > criterias.minimumSaturation {
-                hueCheckResultBottomBelt = howComplementaryAreTwoHuesinRGB(color1: bottomColor, color2: beltColor)
+            if bottomHSBA.s > MatchingCriterias.minimumSaturation && beltHSBA.s > MatchingCriterias.minimumSaturation {
+                hueCheckResultBottomBelt = checkHUEsComplementarityInRGB(color1: bottomColor, color2: beltColor)
                 consideredChecks += 1
             }
-            if bottomHSBA.s > criterias.minimumSaturation && shoesHSBA.s > criterias.minimumSaturation {
-                hueCheckResultBottomShoes = howComplementaryAreTwoHuesinRGB(color1: bottomColor, color2: shoesColor)
+            if bottomHSBA.s > MatchingCriterias.minimumSaturation && shoesHSBA.s > MatchingCriterias.minimumSaturation {
+                hueCheckResultBottomShoes = checkHUEsComplementarityInRGB(color1: bottomColor, color2: shoesColor)
                 consideredChecks += 1
             }
             
@@ -77,11 +80,8 @@ class MatchColors: NSObject {
             }
             
             var hueResultComplementary:String = ""
-
-//            print(hueCheckResultClothes + hueCheckResultTopBelt + hueCheckResultTopShoes + hueCheckResultBottomBelt + hueCheckResultBottomShoes)
-//            print(criterias.complementaryColorDegrees*consideredChecks)
             
-            if (hueCheckResultClothes + hueCheckResultTopBelt + hueCheckResultTopShoes + hueCheckResultBottomBelt + hueCheckResultBottomShoes) < criterias.complementaryColorDegrees*consideredChecks
+            if (hueCheckResultClothes + hueCheckResultTopBelt + hueCheckResultTopShoes + hueCheckResultBottomBelt + hueCheckResultBottomShoes) < MatchingCriterias.complementaryColorDegrees*consideredChecks
             {
                 hueResultComplementary = NSLocalizedString("MatchColors_Match", comment: "")
             }
@@ -89,6 +89,7 @@ class MatchColors: NSObject {
                 hueResultComplementary = NSLocalizedString("MatchColors_NoMatch", comment: "")
             }
             return hueResultComplementary
+            
         case .monoChromatic:
             
             var hueCheckResultClothes:Bool = false
@@ -97,11 +98,11 @@ class MatchColors: NSObject {
             var hueCheckResultBottomBelt:Bool = false
             var hueCheckResultBottomShoes:Bool = false
             
-            hueCheckResultClothes = howSimilarAreTwoHuesInRGB(color1: topColor, color2: bottomColor)
-            hueCheckResultTopBelt = howSimilarAreTwoHuesInRGB(color1: topColor, color2: beltColor)
-            hueCheckResultTopShoes = howSimilarAreTwoHuesInRGB(color1: topColor, color2: shoesColor)
-            hueCheckResultBottomBelt = howSimilarAreTwoHuesInRGB(color1: bottomColor, color2: beltColor)
-            hueCheckResultBottomShoes = howSimilarAreTwoHuesInRGB(color1: bottomColor, color2: shoesColor)
+            hueCheckResultClothes = checkHUEsSimilarityInRGB(color1: topColor, color2: bottomColor)
+            hueCheckResultTopBelt = checkHUEsSimilarityInRGB(color1: topColor, color2: beltColor)
+            hueCheckResultTopShoes = checkHUEsSimilarityInRGB(color1: topColor, color2: shoesColor)
+            hueCheckResultBottomBelt = checkHUEsSimilarityInRGB(color1: bottomColor, color2: beltColor)
+            hueCheckResultBottomShoes = checkHUEsSimilarityInRGB(color1: bottomColor, color2: shoesColor)
             
             if (hueCheckResultClothes && hueCheckResultTopBelt && hueCheckResultTopShoes && hueCheckResultBottomBelt && hueCheckResultBottomShoes) == true {
                 return NSLocalizedString("MatchColors_Match", comment: "")
@@ -117,11 +118,11 @@ class MatchColors: NSObject {
            var hueCheckResultBottomBelt:Bool = false
            var hueCheckResultBottomShoes:Bool = false
            
-           hueCheckResultClothes = isAnalogousAreTwoHuesInRGB(color1: topColor, color2: bottomColor, angle:criterias.analogousAngle)
-           hueCheckResultTopBelt = isAnalogousAreTwoHuesInRGB(color1: topColor, color2: beltColor,angle:criterias.analogousAngle)
-           hueCheckResultTopShoes = isAnalogousAreTwoHuesInRGB(color1: topColor, color2: shoesColor,angle:criterias.analogousAngle)
-           hueCheckResultBottomBelt = isAnalogousAreTwoHuesInRGB(color1: bottomColor, color2: beltColor,angle:criterias.analogousAngle)
-           hueCheckResultBottomShoes = isAnalogousAreTwoHuesInRGB(color1: bottomColor, color2: shoesColor,angle:criterias.analogousAngle)
+           hueCheckResultClothes = checkHUEsAnalogyInRGB(color1: topColor, color2: bottomColor, angle:MatchingCriterias.analogousAngle)
+           hueCheckResultTopBelt = checkHUEsAnalogyInRGB(color1: topColor, color2: beltColor,angle:MatchingCriterias.analogousAngle)
+           hueCheckResultTopShoes = checkHUEsAnalogyInRGB(color1: topColor, color2: shoesColor,angle:MatchingCriterias.analogousAngle)
+           hueCheckResultBottomBelt = checkHUEsAnalogyInRGB(color1: bottomColor, color2: beltColor,angle:MatchingCriterias.analogousAngle)
+           hueCheckResultBottomShoes = checkHUEsAnalogyInRGB(color1: bottomColor, color2: shoesColor,angle:MatchingCriterias.analogousAngle)
            
            if (hueCheckResultClothes && hueCheckResultTopBelt && hueCheckResultTopShoes && hueCheckResultBottomBelt && hueCheckResultBottomShoes) == true{
             return NSLocalizedString("MatchColors_Match", comment: "")
@@ -137,11 +138,11 @@ class MatchColors: NSObject {
             var triadicCheckResultBottomBelt:Bool = false
             var triadicCheckResultBottomShoes:Bool = false
             
-            triadicCheckResultClothes = isTriadicTwoHuesInRGB(color1: topColor, color2: bottomColor)
-            triadicCheckResultTopBelt = isTriadicTwoHuesInRGB(color1: topColor, color2: beltColor)
-            triadicCheckResultTopShoes = isTriadicTwoHuesInRGB(color1: topColor, color2: shoesColor)
-            triadicCheckResultBottomBelt = isTriadicTwoHuesInRGB(color1: bottomColor, color2: beltColor)
-            triadicCheckResultBottomShoes = isTriadicTwoHuesInRGB(color1: bottomColor, color2: shoesColor)
+            triadicCheckResultClothes = checkHUEsTriadicInRGB(color1: topColor, color2: bottomColor)
+            triadicCheckResultTopBelt = checkHUEsTriadicInRGB(color1: topColor, color2: beltColor)
+            triadicCheckResultTopShoes = checkHUEsTriadicInRGB(color1: topColor, color2: shoesColor)
+            triadicCheckResultBottomBelt = checkHUEsTriadicInRGB(color1: bottomColor, color2: beltColor)
+            triadicCheckResultBottomShoes = checkHUEsTriadicInRGB(color1: bottomColor, color2: shoesColor)
             
             if (triadicCheckResultClothes && triadicCheckResultTopBelt && triadicCheckResultTopShoes && triadicCheckResultBottomBelt && triadicCheckResultBottomShoes) == true {
                 return NSLocalizedString("MatchColors_Match", comment: "")
@@ -150,9 +151,7 @@ class MatchColors: NSObject {
                 return NSLocalizedString("MatchColors_NoMatch", comment: "")
             }
         case .skinWithClothesRGB:
-            
-            
-            
+
             return "lah"
         default:
             return "Don't know"
@@ -162,14 +161,11 @@ class MatchColors: NSObject {
     
     func matchTopBottom(topColor:UIColor, bottomColor:UIColor)->String{
         
-        let criterias = matchingCriterias()
-        
         switch chosenAlgorithm {
         case .complementaryColorRGB:
-            let hueCheckResult = howComplementaryAreTwoHuesinRGB(color1: topColor, color2: bottomColor)
+            let hueCheckResult = checkHUEsComplementarityInRGB(color1: topColor, color2: bottomColor)
             var hueResultComplementary:String = ""
-            let criterias = matchingCriterias()
-            if hueCheckResult < criterias.complementaryColorDegrees {
+            if hueCheckResult < MatchingCriterias.complementaryColorDegrees {
                 hueResultComplementary = NSLocalizedString("MatchColors_Match", comment: "")
             }
             else{
@@ -195,7 +191,7 @@ class MatchColors: NSObject {
             
             var hueCheckResultClothes:Bool = false
             
-            hueCheckResultClothes = howSimilarAreTwoHuesInRGB(color1: topColor, color2: bottomColor)
+            hueCheckResultClothes = checkHUEsSimilarityInRGB(color1: topColor, color2: bottomColor)
             
             if (hueCheckResultClothes){
                 return NSLocalizedString("MatchColors_Match", comment: "")
@@ -208,7 +204,7 @@ class MatchColors: NSObject {
             
             var hueCheckResultClothes:Bool = false
 
-            hueCheckResultClothes = isAnalogousAreTwoHuesInRGB(color1: topColor, color2: bottomColor,angle:criterias.analogousAngle)
+            hueCheckResultClothes = checkHUEsAnalogyInRGB(color1: topColor, color2: bottomColor,angle:MatchingCriterias.analogousAngle)
 
             
             if hueCheckResultClothes == true{
@@ -220,7 +216,7 @@ class MatchColors: NSObject {
         case .triadic:
             var triadicCHeckResult:Bool = false
             
-            triadicCHeckResult = isTriadicTwoHuesInRGB(color1: topColor, color2: bottomColor)
+            triadicCHeckResult = checkHUEsTriadicInRGB(color1: topColor, color2: bottomColor)
             
             if triadicCHeckResult == true{
                 return NSLocalizedString("MatchColors_Match", comment: "")
@@ -247,9 +243,13 @@ class MatchColors: NSObject {
         
         let hueSimilarity = abs(beltHSBA.h * 360.0 - shoesHSBA.h * 360.0)
         let brightnessSimilarity = abs(beltHSBA.b - shoesHSBA.b)
-        print(brightnessSimilarity)
-        //print(hueSimilarity)
-        if hueSimilarity <= 3.0 && brightnessSimilarity < 0.05{
+        let saturationSimilarity = abs(beltHSBA.s - shoesHSBA.s)
+        
+       // print("Brightness similarity accessories: \(brightnessSimilarity)\n Hue similarity: \(hueSimilarity)\n Saturation similarity: \(saturationSimilarity)")
+
+        if hueSimilarity <= MatchingCriterias.hueSimilarityAccessories &&
+            brightnessSimilarity < MatchingCriterias.brightnessSimilarityAccessories &&
+            saturationSimilarity < 0.2 {
             return NSLocalizedString("MatchColors_Match", comment: "")
         }
         else{
@@ -261,34 +261,37 @@ class MatchColors: NSObject {
     
     
     //Complementary
-    func howComplementaryAreTwoHuesinRGB(color1:UIColor, color2:UIColor) -> CGFloat{
+    func checkHUEsComplementarityInRGB(color1:UIColor, color2:UIColor) -> CGFloat{
         
         let complementaryColor = color1.complementaryColor()
        
         let complementaryColorHSBA = complementaryColor.hsba()
         let secondColorHSBA = color2.hsba()
 
+
         
         //If the colors HUE is close in value, the colors are matching. Best is 0, worst is 90
         let hueSimilarity = abs(complementaryColorHSBA.h * 360.0 - secondColorHSBA.h * 360.0)  //The closest to 0 the more similar the color
+        
+        //print("Color1 HUE: \(color1.hsba().h)\nColor2 HUE: \(secondColorHSBA.h)\nCalculated complementary HUE: \(complementaryColorHSBA.h)\nHUE similarit: \(hueSimilarity)")
         
         return hueSimilarity
     
     }
     
     //Monochromatic
-    func howSimilarAreTwoHuesInRGB(color1:UIColor, color2:UIColor) -> Bool{
+    func checkHUEsSimilarityInRGB(color1:UIColor, color2:UIColor) -> Bool{
     
         let color1HSBA = color1.hsba()
         let color2HSBA = color2.hsba()
         
         let hueSimilarity = abs(color1HSBA.h  - color2HSBA.h )
         
-        if hueSimilarity <= matchingCriterias().monoChromaticHueDifference {
+        if hueSimilarity <= MatchingCriterias.monoChromaticHueDifference {
             return true
         }
         
-        if color2HSBA.s <= matchingCriterias().minimumSaturation || color1HSBA.s <= matchingCriterias().minimumSaturation{
+        if color2HSBA.s <= MatchingCriterias.minimumSaturation || color1HSBA.s <= MatchingCriterias.minimumSaturation{
             return true
         }else{
             return false
@@ -297,9 +300,8 @@ class MatchColors: NSObject {
     
     
     //Analogous
-    func isAnalogousAreTwoHuesInRGB(color1:UIColor, color2:UIColor, angle:CGFloat) -> Bool{
+    func checkHUEsAnalogyInRGB(color1:UIColor, color2:UIColor, angle:CGFloat) -> Bool{
         
-        //let analogousColors = self.getAnalogousColors(color1: color1, angle:angle)
         let analogArray = color1.colorScheme(type: .Analagous)
 
         let colorMinus:UIColor = analogArray[3]
@@ -312,7 +314,7 @@ class MatchColors: NSObject {
         
         let Color1HSBA = color1.hsba()
         
-        if Color1HSBA.s <= 0.05 {
+        if Color1HSBA.s <= MatchingCriterias.howAnalogousCriteria {
             return true
         }
         
@@ -322,7 +324,7 @@ class MatchColors: NSObject {
             }
             else{
                 //If the colors has no saturation it is in theory always matching
-                if color2HSBA.s <= 0.05 {
+                if color2HSBA.s <= MatchingCriterias.howAnalogousCriteria {
                     return true
                 }else{
                     return false
@@ -334,32 +336,31 @@ class MatchColors: NSObject {
                 return true
             }
             else{
-                if color2HSBA.s <= 0.05 {
+                if color2HSBA.s <= MatchingCriterias.howAnalogousCriteria {
                     return true
-                }else{
+                }
+                else{
                     return false
                 }
             }
         }
-
     }
     
     //Triadic
-    func isTriadicTwoHuesInRGB(color1:UIColor, color2:UIColor) -> Bool{
+    func checkHUEsTriadicInRGB(color1:UIColor, color2:UIColor) -> Bool{
         
         //Get the two triadic colors of color1
-        let criterias = matchingCriterias()
         let color1HSBA = color1.hsba()
         
-        if color1HSBA.s >= 0.01 && color1HSBA.b >= 0.01{
+        if color1HSBA.s >= 0.01 && color1HSBA.b >= 0.01 {
         
             let triadicArray = color1.colorScheme(type: .Triad)
             let triadColor1 = triadicArray[1]
             let triadColor2 = triadicArray[2]
             
             //check if color2 is near to the two triadic colors
-            let check21 = self.isAnalogousAreTwoHuesInRGB(color1: color2, color2: triadColor1, angle: criterias.triadicAngle)
-            let check22 = self.isAnalogousAreTwoHuesInRGB(color1: color2, color2: triadColor2, angle: criterias.triadicAngle)
+            let check21 = self.checkHUEsAnalogyInRGB(color1: color2, color2: triadColor1, angle: MatchingCriterias.triadicAngle)
+            let check22 = self.checkHUEsAnalogyInRGB(color1: color2, color2: triadColor2, angle: MatchingCriterias.triadicAngle)
             
             if check21 || check22 {
                 return true
@@ -452,52 +453,4 @@ class MatchColors: NSObject {
         return UIColor(red: r, green: g, blue: b, alpha: alpha)
     
     }
-    
-//    + (UIColor*)rybColorWithRed:(CGFloat)red yellow:(CGFloat)yellow blue:(CGFloat)blue alpha:(CGFloat)alpha {
-//    
-//    float r, y, b, g, w, my, mg, n;
-//    r = red;
-//    y = yellow;
-//    b = blue;
-//    
-//    // remove whiteness
-//    w = MIN(r, MIN(y,b));
-//    r -= w;
-//    y -= w;
-//    b -= w;
-//    
-//    my = MAX(r, MAX(y,b));
-//    
-//    // Get the green out of the yellow and blue
-//    g = MIN(y, b);
-//    y -= g;
-//    b -= g;
-//    
-//    if (b && g) {
-//    b *= 2.0;
-//    g *= 2.0;
-//    }
-//    
-//    // Redistribute the remaining yellow.
-//    r += y;
-//    g += y;
-//    
-//    // Normalize to values.
-//    mg = MAX(r, MAX(g, b));
-//    if (mg) {
-//    n = my / mg;
-//    r *= n;
-//    g *= n;
-//    b *= n;
-//    }
-//    
-//    // Add the white back in.
-//    r += w;
-//    g += w;
-//    b += w;
-//    
-//    return [UIColor colorWithRed:r green:g blue:b alpha:alpha];
-//    }
-    
-    
 }

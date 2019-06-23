@@ -31,7 +31,7 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
     
     private var cameraDetectionClothTag = -1
     
-    @IBOutlet var stretchView: stretchableView!
+    @IBOutlet var stretchView: StretchableView!
     
     @IBOutlet weak var horizontalColorPicker: SwiftHUEColorPicker!
     @IBOutlet weak var horizontalSaturationPicker: SwiftHUEColorPicker!
@@ -82,9 +82,6 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
     @IBOutlet var changeSkinColorStackView: UIStackView!
     
     @IBOutlet var stylesCollectionView: UICollectionView!
-    
-    @IBOutlet var changeAlgorithmHint: UIView!
-    @IBOutlet var changeAlgorithmArrow: UIImageView!
     
     @IBOutlet var topMatchIcons: UIImageView!
     @IBOutlet var accMatchIcons: UIImageView!
@@ -1060,10 +1057,10 @@ class stretchViewController: UIViewController, SwiftHUEColorPickerDelegate, UICo
     }
     
     @objc func updateDesignerView(){
-        self.topDesignerLabel.text = currentClothPiecesOfStretchView.sharedInstance.top[0] as? String
-        self.beltDesignerLabel.text = currentClothPiecesOfStretchView.sharedInstance.belt[0] as? String
-        self.bottomDesignerLabel.text = currentClothPiecesOfStretchView.sharedInstance.bottom[0] as? String
-        self.shoesDesignerLabel.text = currentClothPiecesOfStretchView.sharedInstance.shoes[0] as? String
+        self.topDesignerLabel.text = CurrentStretchViewClothes.sharedInstance.top[0] as? String
+        self.beltDesignerLabel.text = CurrentStretchViewClothes.sharedInstance.belt[0] as? String
+        self.bottomDesignerLabel.text = CurrentStretchViewClothes.sharedInstance.bottom[0] as? String
+        self.shoesDesignerLabel.text = CurrentStretchViewClothes.sharedInstance.shoes[0] as? String
     }
     
     // MARK: UITextField delegate
@@ -1149,8 +1146,9 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         let redColor = UIColor(red: 217/255.0, green: 144/255.0, blue: 134/255.0, alpha: 1.0)
         let greenColor = UIColor(red: 133/255.0, green: 214/255.0, blue: 168/255.0, alpha: 1.0)
         
-    
-        if GlobalMatch != NSLocalizedString("MatchColors_Match", comment: ""){
+        let matchText = NSLocalizedString("MatchColors_Match", comment: "")
+        
+        if GlobalMatch != matchText {
             self.globalMatchLabel.textColor = redColor
             self.allMatchIcons.image = UIImage(named: "men_all_NOMatch")
         }
@@ -1161,7 +1159,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         
         self.globalMatchLabel.text = GlobalMatch
         
-        if TopBottomMatch != NSLocalizedString("MatchColors_Match", comment: ""){ //Needs to be cleaned
+        if TopBottomMatch != matchText {
             self.tobBottomMatchLabel.textColor = redColor
             self.topMatchIcons.image = UIImage(named: "men_top_NOMatch")
         }
@@ -1172,7 +1170,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         
         self.tobBottomMatchLabel.text = TopBottomMatch
         
-        if AccessoriesMatch != NSLocalizedString("MatchColors_Match", comment: ""){
+        if AccessoriesMatch != matchText {
             self.accessoriesMatchLabel.textColor = redColor
             self.accMatchIcons.image = UIImage(named: "men_acc_NOMatch")
         }
@@ -1182,7 +1180,6 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         }
         
         self.accessoriesMatchLabel.text = AccessoriesMatch
-
 
     }
     
@@ -1484,17 +1481,17 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         {
             switch (sender as! UIButton).tag {
             case 0:
-                (segue.destination as? DesignerDetailsViewController)?.URLString = (currentClothPiecesOfStretchView.sharedInstance.top[1] as? String)!
-                (segue.destination as? DesignerDetailsViewController)?.designerISProfile = (currentClothPiecesOfStretchView.sharedInstance.top[2] as? String)!
+                (segue.destination as? DesignerDetailsViewController)?.URLString = (CurrentStretchViewClothes.sharedInstance.top[1] as? String)!
+                (segue.destination as? DesignerDetailsViewController)?.designerISProfile = (CurrentStretchViewClothes.sharedInstance.top[2] as? String)!
             case 1:
-                (segue.destination as? DesignerDetailsViewController)?.URLString = (currentClothPiecesOfStretchView.sharedInstance.belt[1] as? String)!
-                (segue.destination as? DesignerDetailsViewController)?.designerISProfile = (currentClothPiecesOfStretchView.sharedInstance.belt[2] as? String)!
+                (segue.destination as? DesignerDetailsViewController)?.URLString = (CurrentStretchViewClothes.sharedInstance.belt[1] as? String)!
+                (segue.destination as? DesignerDetailsViewController)?.designerISProfile = (CurrentStretchViewClothes.sharedInstance.belt[2] as? String)!
             case 2:
-                (segue.destination as? DesignerDetailsViewController)?.URLString = (currentClothPiecesOfStretchView.sharedInstance.bottom[1] as? String)!
-                (segue.destination as? DesignerDetailsViewController)?.designerISProfile = (currentClothPiecesOfStretchView.sharedInstance.bottom[2] as? String)!
+                (segue.destination as? DesignerDetailsViewController)?.URLString = (CurrentStretchViewClothes.sharedInstance.bottom[1] as? String)!
+                (segue.destination as? DesignerDetailsViewController)?.designerISProfile = (CurrentStretchViewClothes.sharedInstance.bottom[2] as? String)!
             case 3:
-                (segue.destination as? DesignerDetailsViewController)?.URLString = (currentClothPiecesOfStretchView.sharedInstance.shoes[1] as? String)!
-                (segue.destination as? DesignerDetailsViewController)?.designerISProfile = (currentClothPiecesOfStretchView.sharedInstance.shoes[2] as? String)!
+                (segue.destination as? DesignerDetailsViewController)?.URLString = (CurrentStretchViewClothes.sharedInstance.shoes[1] as? String)!
+                (segue.destination as? DesignerDetailsViewController)?.designerISProfile = (CurrentStretchViewClothes.sharedInstance.shoes[2] as? String)!
             default:
                 break
             }

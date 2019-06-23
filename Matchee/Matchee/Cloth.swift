@@ -42,7 +42,7 @@ class Cloth {
     
     public var imageView:UIImageView = UIImageView()
     public var image:UIImage = UIImage()
-    public var color:UIColor = UIColor(red: 213/255.0, green: 179/255.0, blue: 151/255.0, alpha: 1.0)
+    public var color:UIColor = #colorLiteral(red: 0.8352941176, green: 0.7019607843, blue: 0.5921568627, alpha: 1) //#D5B397
     public var name:String = ""
     public var gender:Int = 0  // 0 = male 1 = female
     public var drawingOrder:ClothDrawingOrder = ClothDrawingOrder.top

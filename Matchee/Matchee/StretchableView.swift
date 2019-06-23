@@ -8,25 +8,21 @@
 
 import UIKit
 
-
-final class currentClothPiecesOfStretchView {
+final class CurrentStretchViewClothes {
     
-    private init() { }
+    private init() {}
     
-    static let sharedInstance: currentClothPiecesOfStretchView = currentClothPiecesOfStretchView()
+    static let sharedInstance: CurrentStretchViewClothes = CurrentStretchViewClothes()
     
-        var top:NSArray = NSArray()
-        var belt:NSArray = NSArray()
-        var bottom:NSArray = NSArray()
-        var shoes:NSArray = NSArray()
-    
-//    var top:clothPiece = clothPiece(cloth:"",drawingOrder:.top, designer:[""])
-//    var belt:clothPiece = clothPiece(cloth:"",drawingOrder:.belt, designer:[""])
-//    var bottom:clothPiece = clothPiece(cloth:"",drawingOrder:.pants, designer:[""])
-//    var shoes:clothPiece = clothPiece(cloth:"",drawingOrder:.shoes, designer:[""])
+    var top:NSArray = NSArray()
+    var belt:NSArray = NSArray()
+    var bottom:NSArray = NSArray()
+    var shoes:NSArray = NSArray()
 }
 
-class stretchableView: UIImageView {
+class StretchableView: UIImageView {
+    
+    //MARK: Constants
     
     struct Constants {
         static let boundaryHeightMax = 350
@@ -51,6 +47,13 @@ class stretchableView: UIImageView {
         let shoesProportion:CGFloat = 0.070
     }
     
+    enum Axis {
+        case X
+        case Y
+    }
+    
+    //MARK: Properties
+    
     private var didSetupConstraints = false
     private var lastTouchedPositionPinchOut = CGPoint(x: 0, y: 0)
     
@@ -67,11 +70,15 @@ class stretchableView: UIImageView {
 
     public var skinColor:UIColor = UIColor(red: 229/255.0, green: 194/255.0, blue: 152/255.0, alpha: 1.0)
 
-    enum Axis {
-        case X
-        case Y
+    //MARK: Initializers
+    
+    public func initWithClothes(clothes:[Cloth]) {
+        self.clothes = clothes
+        initBackgroundView()
+        initSiblingView()
     }
     
+    //MARK: Class methods
     
     public func setImageViewColor(cloth:Cloth, color:UIColor){
 
@@ -84,38 +91,25 @@ class stretchableView: UIImageView {
     
     public func setStoredSetColorsToCurrentClothes(storedColors:[UIColor]){
     
-        self.clothes[0].color = storedColors[0]
-        self.clothes[1].color = storedColors[1]
-        self.clothes[2].color = storedColors[2]
-        self.clothes[3].color = storedColors[3]
-        self.initSiblingView()
-    }
-    
-    public func initWithClothes(clothes:[Cloth]) {
-    //    self.tag = -1
-        self.clothes = clothes
-        initBackgroundView()
+        clothes[0].color = storedColors[0]
+        clothes[1].color = storedColors[1]
+        clothes[2].color = storedColors[2]
+        clothes[3].color = storedColors[3]
         initSiblingView()
     }
-    
+
     public func changeGenderClothes(clothes:[Cloth]) {
-    //    self.tag = -1
         self.clothes = clothes
         initSiblingView()
     }
     
     override func updateConstraints() {
         super.updateConstraints()
-        
-        if didSetupConstraints == false {
-        //    addConstraintsForMyView()
-        }
     }
     
     func saveCurrentUsedClothes(){
         let storageManager = StorageManager()
         storageManager.storeCurrentClothesSet(clothesArray: clothes)
-        
     }
     
     func restoreCurrentUsedClothes() -> Bool{
@@ -135,7 +129,6 @@ class stretchableView: UIImageView {
     func initSiblingView(){
 
         //Remove all subviews
-//        self.subviews.forEach({ $0.removeFromSuperview() })
         for subview in self.subviews {
             if subview.tag != -1{
                 subview.removeFromSuperview()
@@ -143,30 +136,29 @@ class stretchableView: UIImageView {
         }
         
         var tag = 0
-        
         var oldCloth = Cloth()
         
-        for cloth:Cloth in clothes {    // TODO: Optimise
+        for cloth in clothes {    // TODO: Optimise
             
             let currentGender = UserDefaults.standard.string(forKey: "Matchee.currentGender")
             if currentGender == "M" {
-                var menClass = ClothesMen()
+                let menClass = ClothesMen()
                 let menArray:[clothPiece] = menClass.getMenClothesFromStruct()
                 
                 for menCloth in menArray{
                     if menCloth.cloth == cloth.name{
                         switch tag {
                         case 0://top
-                            currentClothPiecesOfStretchView.sharedInstance.top = menCloth.designer
+                            CurrentStretchViewClothes.sharedInstance.top = menCloth.designer
                             break
                         case 1://shoes
-                            currentClothPiecesOfStretchView.sharedInstance.shoes = menCloth.designer
+                            CurrentStretchViewClothes.sharedInstance.shoes = menCloth.designer
                             break
                         case 2://pants
-                            currentClothPiecesOfStretchView.sharedInstance.bottom = menCloth.designer
+                            CurrentStretchViewClothes.sharedInstance.bottom = menCloth.designer
                             break
                         case 3://belt
-                            currentClothPiecesOfStretchView.sharedInstance.belt = menCloth.designer
+                            CurrentStretchViewClothes.sharedInstance.belt = menCloth.designer
                             break
                         default:
                             break
@@ -175,34 +167,34 @@ class stretchableView: UIImageView {
                 }
                 
             }else{
-                var womenClass = ClothesWomen()
+                let womenClass = ClothesWomen()
                 let womenArray:[clothPiece] = womenClass.getWomenClothesFromStruct()
                 
                 for womenCloth in womenArray{
                     if womenCloth.cloth == cloth.name{
                         switch tag {
                         case 0://top
-                            currentClothPiecesOfStretchView.sharedInstance.top = womenCloth.designer
+                            CurrentStretchViewClothes.sharedInstance.top = womenCloth.designer
                             break
                         case 1://shoes
-                            currentClothPiecesOfStretchView.sharedInstance.shoes = womenCloth.designer
+                            CurrentStretchViewClothes.sharedInstance.shoes = womenCloth.designer
                             break
                         case 2://pants
-                            currentClothPiecesOfStretchView.sharedInstance.bottom = womenCloth.designer
+                            CurrentStretchViewClothes.sharedInstance.bottom = womenCloth.designer
                             break
                         case 3://belt
-                            currentClothPiecesOfStretchView.sharedInstance.belt = womenCloth.designer
+                            CurrentStretchViewClothes.sharedInstance.belt = womenCloth.designer
                             break
                         default:
                             break
                         }
                     }
                 }
-  
             }
             
             cloth.imageView.tag = tag
             cloth.imageView.isUserInteractionEnabled = true
+            
             let pinchOutGesture = UIPinchGestureRecognizer(target: self, action: #selector(self.pinchedOut(gestureRecognizer:)))
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.doubleTapped(gestureRecognizer:)))
             tapGesture.numberOfTapsRequired = 1
@@ -218,7 +210,6 @@ class stretchableView: UIImageView {
             let longTap = UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(gestureRecognizer:)))
             longTap.minimumPressDuration = 1.0
             cloth.imageView.addGestureRecognizer(longTap)
-            
             
             cloth.imageView.addGestureRecognizer(pinchOutGesture)
             cloth.imageView.addGestureRecognizer(tapGesture)
@@ -313,15 +304,10 @@ class stretchableView: UIImageView {
 
         if self.backgroundView.tag != -1 {
             self.backgroundView.tag = -1
-
             self.backgroundView.isUserInteractionEnabled = true
             self.backgroundView.contentMode = .scaleAspectFit
-//            self.backgroundView.image = UIImage(named:"w-model")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-//            self.backgroundView.image = colorize.processPixels(in: (self.backgroundView.image)!,color:self.skinColor)
-            
             self.backgroundView.translatesAutoresizingMaskIntoConstraints = false
         }
-
     }
     
     public func initBackgroundView(imageName:String){
@@ -347,20 +333,16 @@ class stretchableView: UIImageView {
         self.skinColor = color
         self.backgroundView.image = UIImage(named:image)?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         self.backgroundView.image = colorize.processPixels(in: (self.backgroundView.image)!,color:self.skinColor)
-
-//        self.backgroundView.image = UIImage(named:"w-model")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-//        self.backgroundView.image = colorize.processPixels(in: (self.backgroundView.image)!,color:self.skinColor)
     }
     
     // MARK:  GESTURE RECOGNIZERS   //////////////////////////////////////////////////////////////
     
     @objc func swiped(gesture:UISwipeGestureRecognizer){
     
-        var clothesMen:ClothesMen = ClothesMen()
-        var clothesWomen:ClothesWomen = ClothesWomen()
+        let clothesMen:ClothesMen = ClothesMen()
+        let clothesWomen:ClothesWomen = ClothesWomen()
         
-        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            switch swipeGesture.direction {
+            switch gesture.direction {
             case UISwipeGestureRecognizer.Direction.right:
                     print("swiped right on view with tag \(gesture.view!.tag)")
                     
@@ -392,7 +374,7 @@ class stretchableView: UIImageView {
                                         cloth.name = filteredList[index+1].cloth
                                         cloth.image = UIImage(named: filteredList[index+1].cloth)!
                                         //assigning current cloth piece to singleton
-                                        currentClothPiecesOfStretchView.sharedInstance.top = filteredList[index+1].designer
+                                        CurrentStretchViewClothes.sharedInstance.top = filteredList[index+1].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }
@@ -400,7 +382,7 @@ class stretchableView: UIImageView {
                                         cloth.name = filteredList[0].cloth
                                         cloth.image = UIImage(named: filteredList[0].cloth)!
                                         //assigning current cloth piece to singleton
-                                        currentClothPiecesOfStretchView.sharedInstance.top = filteredList[0].designer
+                                        CurrentStretchViewClothes.sharedInstance.top = filteredList[0].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }
@@ -422,14 +404,14 @@ class stretchableView: UIImageView {
                                     if (index + 1) <= (filteredList.count - 1) {
                                         cloth.name = filteredList[index+1].cloth
                                         cloth.image = UIImage(named: filteredList[index+1].cloth)!
-                                        currentClothPiecesOfStretchView.sharedInstance.shoes = filteredList[index+1].designer
+                                        CurrentStretchViewClothes.sharedInstance.shoes = filteredList[index+1].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }
                                     else{
                                         cloth.name = filteredList[0].cloth
                                         cloth.image = UIImage(named: filteredList[0].cloth)!
-                                        currentClothPiecesOfStretchView.sharedInstance.shoes = filteredList[0].designer
+                                        CurrentStretchViewClothes.sharedInstance.shoes = filteredList[0].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }
@@ -451,14 +433,14 @@ class stretchableView: UIImageView {
                                     if (index + 1) <= (filteredList.count - 1) {
                                         cloth.name = filteredList[index+1].cloth
                                         cloth.image = UIImage(named: filteredList[index+1].cloth)!
-                                        currentClothPiecesOfStretchView.sharedInstance.bottom = filteredList[index+1].designer
+                                        CurrentStretchViewClothes.sharedInstance.bottom = filteredList[index+1].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }
                                     else{
                                         cloth.name = filteredList[0].cloth
                                         cloth.image = UIImage(named: filteredList[0].cloth)!
-                                        currentClothPiecesOfStretchView.sharedInstance.bottom = filteredList[0].designer
+                                        CurrentStretchViewClothes.sharedInstance.bottom = filteredList[0].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }
@@ -480,14 +462,14 @@ class stretchableView: UIImageView {
                                     if (index + 1) <= (filteredList.count - 1) {
                                         cloth.name = filteredList[index+1].cloth
                                         cloth.image = UIImage(named: filteredList[index+1].cloth)!
-                                        currentClothPiecesOfStretchView.sharedInstance.belt = filteredList[index+1].designer
+                                        CurrentStretchViewClothes.sharedInstance.belt = filteredList[index+1].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }
                                     else{
                                         cloth.name = filteredList[0].cloth
                                         cloth.image = UIImage(named: filteredList[0].cloth)!
-                                        currentClothPiecesOfStretchView.sharedInstance.belt = filteredList[0].designer
+                                        CurrentStretchViewClothes.sharedInstance.belt = filteredList[0].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }
@@ -533,14 +515,14 @@ class stretchableView: UIImageView {
                                     if (index - 1) >= 0 {
                                         cloth.name = filteredList[index-1].cloth
                                         cloth.image = UIImage(named: filteredList[index-1].cloth)!
-                                        currentClothPiecesOfStretchView.sharedInstance.top = filteredList[index-1].designer
+                                        CurrentStretchViewClothes.sharedInstance.top = filteredList[index-1].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }
                                     else{
                                         cloth.name = filteredList[0].cloth
                                         cloth.image = UIImage(named: filteredList[0].cloth)!
-                                        currentClothPiecesOfStretchView.sharedInstance.top = filteredList[0].designer
+                                        CurrentStretchViewClothes.sharedInstance.top = filteredList[0].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }
@@ -562,13 +544,13 @@ class stretchableView: UIImageView {
                                     if (index - 1) >= 0 {
                                         cloth.name = filteredList[index-1].cloth
                                         cloth.image = UIImage(named: filteredList[index-1].cloth)!
-                                        currentClothPiecesOfStretchView.sharedInstance.shoes = filteredList[index-1].designer
+                                        CurrentStretchViewClothes.sharedInstance.shoes = filteredList[index-1].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }                                else{
                                         cloth.name = filteredList[0].cloth
                                         cloth.image = UIImage(named: filteredList[0].cloth)!
-                                        currentClothPiecesOfStretchView.sharedInstance.shoes = filteredList[0].designer
+                                        CurrentStretchViewClothes.sharedInstance.shoes = filteredList[0].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }
@@ -590,14 +572,14 @@ class stretchableView: UIImageView {
                                     if (index - 1) >= 0 {
                                         cloth.name = filteredList[index-1].cloth
                                         cloth.image = UIImage(named: filteredList[index-1].cloth)!
-                                        currentClothPiecesOfStretchView.sharedInstance.bottom = filteredList[index-1].designer
+                                        CurrentStretchViewClothes.sharedInstance.bottom = filteredList[index-1].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }
                                     else{
                                         cloth.name = filteredList[0].cloth
                                         cloth.image = UIImage(named: filteredList[0].cloth)!
-                                        currentClothPiecesOfStretchView.sharedInstance.bottom = filteredList[0].designer
+                                        CurrentStretchViewClothes.sharedInstance.bottom = filteredList[0].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }
@@ -619,14 +601,14 @@ class stretchableView: UIImageView {
                                     if (index - 1) >= 0 {
                                         cloth.name = filteredList[index-1].cloth
                                         cloth.image = UIImage(named: filteredList[index-1].cloth)!
-                                        currentClothPiecesOfStretchView.sharedInstance.belt = filteredList[index-1].designer
+                                        CurrentStretchViewClothes.sharedInstance.belt = filteredList[index-1].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }
                                     else{
                                         cloth.name = filteredList[0].cloth
                                         cloth.image = UIImage(named: filteredList[0].cloth)!
-                                        currentClothPiecesOfStretchView.sharedInstance.belt = filteredList[0].designer
+                                        CurrentStretchViewClothes.sharedInstance.belt = filteredList[0].designer
                                         self.setImageViewColor(cloth: cloth, color: cloth.color)
                                         break
                                     }
@@ -648,9 +630,6 @@ class stretchableView: UIImageView {
             
             //Update designer view with designer info
             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "Notification.updateDesignerView")))
-        }
-
-    
     }
     
     @objc func longTap(gestureRecognizer:UILongPressGestureRecognizer){
@@ -915,9 +894,4 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return image!
     }
-    
-    
-
-    
-
 }

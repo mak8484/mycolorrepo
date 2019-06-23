@@ -39,8 +39,8 @@
 		A9963F801E4A0B8400CB2CF5 /* CustomCoachMarkBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9963F7E1E4A0B8400CB2CF5 /* CustomCoachMarkBodyView.swift */; };
 		A999911B1E670578007B61AD /* UIImage+ColorPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A99991181E670578007B61AD /* UIImage+ColorPicker.m */; };
 		A999911C1E670578007B61AD /* DTColorPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A999911A1E670578007B61AD /* DTColorPickerImageView.m */; };
-		A9A44CFD1E13A98900ABFF49 /* stretchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A44CFC1E13A98900ABFF49 /* stretchableView.swift */; };
-		A9A44CFF1E13AF3B00ABFF49 /* stretchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A44CFE1E13AF3B00ABFF49 /* stretchViewController.swift */; };
+		A9A44CFD1E13A98900ABFF49 /* StretchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A44CFC1E13A98900ABFF49 /* StretchableView.swift */; };
+		A9A44CFF1E13AF3B00ABFF49 /* StretchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A44CFE1E13AF3B00ABFF49 /* StretchViewController.swift */; };
 		A9BC0BA91E4F5A5C0032DA44 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9BC0BA71E4F5A5C0032DA44 /* Localizable.strings */; };
 		A9BC0BAE1E51B49F0032DA44 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BC0BAD1E51B49F0032DA44 /* WebViewViewController.swift */; };
 		A9BC0BB51E55ED630032DA44 /* ColorDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BC0BB31E55ED630032DA44 /* ColorDetectorViewController.swift */; };
@@ -110,8 +110,8 @@
 		A99991181E670578007B61AD /* UIImage+ColorPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorPicker.m"; sourceTree = "<group>"; };
 		A99991191E670578007B61AD /* DTColorPickerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTColorPickerImageView.h; sourceTree = "<group>"; };
 		A999911A1E670578007B61AD /* DTColorPickerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTColorPickerImageView.m; sourceTree = "<group>"; };
-		A9A44CFC1E13A98900ABFF49 /* stretchableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stretchableView.swift; sourceTree = "<group>"; };
-		A9A44CFE1E13AF3B00ABFF49 /* stretchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stretchViewController.swift; sourceTree = "<group>"; };
+		A9A44CFC1E13A98900ABFF49 /* StretchableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchableView.swift; sourceTree = "<group>"; };
+		A9A44CFE1E13AF3B00ABFF49 /* StretchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchViewController.swift; sourceTree = "<group>"; };
 		A9BC0BA81E4F5A5C0032DA44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A9BC0BAB1E4F5A890032DA44 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A9BC0BAC1E4F5A890032DA44 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 				A99991191E670578007B61AD /* DTColorPickerImageView.h */,
 				A999911A1E670578007B61AD /* DTColorPickerImageView.m */,
 				A986610B1E20EC0D000EC785 /* LaunchView.swift */,
-				A9A44CFC1E13A98900ABFF49 /* stretchableView.swift */,
+				A9A44CFC1E13A98900ABFF49 /* StretchableView.swift */,
 				A9963F7D1E4A0B8400CB2CF5 /* CustomCoachMarkArrowView.swift */,
 				A9963F7E1E4A0B8400CB2CF5 /* CustomCoachMarkBodyView.swift */,
 			);
@@ -307,7 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				A962835A1E3F7BCE005434D7 /* SweetAlertViewController.swift */,
-				A9A44CFE1E13AF3B00ABFF49 /* stretchViewController.swift */,
+				A9A44CFE1E13AF3B00ABFF49 /* StretchViewController.swift */,
 				A962834A1E39F0A4005434D7 /* MatchSettingsViewController.swift */,
 				A96283541E3B81F6005434D7 /* GenderSelectionViewController.swift */,
 				A9BC0BAD1E51B49F0032DA44 /* WebViewViewController.swift */,
@@ -539,7 +539,7 @@
 				A9F7099D1E8FC6990076D378 /* DesignerDetailsViewController.swift in Sources */,
 				A93FC3D91E2663970054D791 /* SkinColors.swift in Sources */,
 				A96283551E3B81F6005434D7 /* GenderSelectionViewController.swift in Sources */,
-				A9A44CFF1E13AF3B00ABFF49 /* stretchViewController.swift in Sources */,
+				A9A44CFF1E13AF3B00ABFF49 /* StretchViewController.swift in Sources */,
 				A93FC3D51E2386B40054D791 /* ClothesStorage.xcdatamodeld in Sources */,
 				A9963F7F1E4A0B8400CB2CF5 /* CustomCoachMarkArrowView.swift in Sources */,
 				A96283531E3B56CD005434D7 /* SwiftHUEColorPicker.swift in Sources */,
@@ -552,7 +552,7 @@
 				A9DABC4C22BCC18A00B62EC8 /* ClothesWomen.swift in Sources */,
 				A98660F91E16A9FB000EC785 /* Colorize.swift in Sources */,
 				A987A4671E87EA13005D744C /* IAPTableViewController.swift in Sources */,
-				A9A44CFD1E13A98900ABFF49 /* stretchableView.swift in Sources */,
+				A9A44CFD1E13A98900ABFF49 /* StretchableView.swift in Sources */,
 				A96283501E3A30AA005434D7 /* UIColor+Mixing.m in Sources */,
 				A9BC0BBC1E603EF70032DA44 /* ColorTuningViewController.swift in Sources */,
 				A986610A1E1FF329000EC785 /* MatchColors.swift in Sources */,
