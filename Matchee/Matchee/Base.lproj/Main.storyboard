@@ -948,7 +948,6 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="ColorHEXTextField" destination="8L5-hp-I8J" id="uSB-7B-vtI"/>
                         <outlet property="accMatchIcons" destination="JdE-Ho-XSt" id="p3J-th-CYk"/>
                         <outlet property="accessoriesMatchLabel" destination="Qzx-X2-vjS" id="4Ra-DV-WYC"/>
                         <outlet property="actionView" destination="mVf-NA-ew8" id="K9o-W9-wzq"/>
@@ -967,6 +966,7 @@
                         <outlet property="changeToWomanButton" destination="EQc-rk-QpK" id="lLO-ss-Ljy"/>
                         <outlet property="clothColorLabel" destination="8pI-OQ-cop" id="bGP-zW-gzi"/>
                         <outlet property="clothHueLabel" destination="3hS-4a-IDN" id="laQ-jd-Grl"/>
+                        <outlet property="colorHEXTextField" destination="8L5-hp-I8J" id="uSB-7B-vtI"/>
                         <outlet property="colorPickerFineTuneConstraint" destination="Trr-bH-7cO" id="HoA-Di-24S"/>
                         <outlet property="colorPickerFineTuneHeightConstraint" destination="Ohk-ec-yqM" id="7Yj-Wq-RCm"/>
                         <outlet property="colorPickerFineTuningImageView" destination="ZSD-eD-P7h" id="XCn-ry-qpC"/>
@@ -977,9 +977,6 @@
                         <outlet property="designerView" destination="yJo-25-MOP" id="dhi-V1-e3n"/>
                         <outlet property="fineTunedColorView" destination="OU3-Qs-LeN" id="g9G-Po-dgV"/>
                         <outlet property="globalMatchLabel" destination="liN-wr-h2n" id="HNw-jA-zC6"/>
-                        <outlet property="horizontalBrightnessPicker" destination="KjO-4W-ClF" id="BfY-OX-X30"/>
-                        <outlet property="horizontalColorPicker" destination="hDN-Ym-tIo" id="sch-Vf-5Bt"/>
-                        <outlet property="horizontalSaturationPicker" destination="OKI-X0-dFL" id="CDG-l0-BOz"/>
                         <outlet property="leftMenuHeightConstraint" destination="2WP-ju-6wv" id="HkE-Yx-Qtd"/>
                         <outlet property="leftSideMenuStackView" destination="P4T-fU-mFq" id="See-rV-8jh"/>
                         <outlet property="mainSideMenu" destination="JfL-rV-cjC" id="9G5-2z-9dw"/>

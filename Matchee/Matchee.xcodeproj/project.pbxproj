@@ -56,6 +56,8 @@
 		A9DABC4A22BCC04900B62EC8 /* ClothesMen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DABC4922BCC04900B62EC8 /* ClothesMen.swift */; };
 		A9DABC4C22BCC18A00B62EC8 /* ClothesWomen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DABC4B22BCC18A00B62EC8 /* ClothesWomen.swift */; };
 		A9F7099D1E8FC6990076D378 /* DesignerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F7099C1E8FC6990076D378 /* DesignerDetailsViewController.swift */; };
+		A9FA53FF22C0785D00290BD8 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA53FE22C0785D00290BD8 /* UIColor+Ext.swift */; };
+		A9FA540122C0A68F00290BD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FA540022C0A68F00290BD8 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -138,6 +140,8 @@
 		A9F709A31E8FD2040076D378 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Main.strings"; sourceTree = "<group>"; };
 		A9F709A41E8FD2040076D378 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A9F709A51E8FD2050076D378 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A9FA53FE22C0785D00290BD8 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		A9FA540022C0A68F00290BD8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B6CFC233854559EE1A263C23 /* Pods-Matchee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matchee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Matchee/Pods-Matchee.debug.xcconfig"; sourceTree = "<group>"; };
 		E5C804E6A32BF26ACCA3C314 /* Pods-Matchee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matchee.release.xcconfig"; path = "Pods/Target Support Files/Pods-Matchee/Pods-Matchee.release.xcconfig"; sourceTree = "<group>"; };
 		FBA6D5B94F173F1D5D400F68 /* Pods_Matchee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Matchee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				A950B0A11E0577D200233EFB /* AppDelegate.swift */,
+				A9FA540022C0A68F00290BD8 /* Constants.swift */,
 				A9DABC4122BCB9DB00B62EC8 /* Models */,
 				A9DABC4222BCB9F300B62EC8 /* Views */,
 				A9DABC4322BCBA1F00B62EC8 /* Controllers */,
@@ -333,6 +338,7 @@
 				A9BC0BC91E61B0150032DA44 /* UIImage+AverageColor.m */,
 				A962834E1E3A30AA005434D7 /* UIColor+Mixing.h */,
 				A962834F1E3A30AA005434D7 /* UIColor+Mixing.m */,
+				A9FA53FE22C0785D00290BD8 /* UIColor+Ext.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -557,7 +563,9 @@
 				A9BC0BBC1E603EF70032DA44 /* ColorTuningViewController.swift in Sources */,
 				A986610A1E1FF329000EC785 /* MatchColors.swift in Sources */,
 				A987A4611E87DB0C005D744C /* Judex.swift in Sources */,
+				A9FA53FF22C0785D00290BD8 /* UIColor+Ext.swift in Sources */,
 				A9CCF17E1E34C74C0099C420 /* Colours.swift in Sources */,
+				A9FA540122C0A68F00290BD8 /* Constants.swift in Sources */,
 				A9BC0BCA1E61B0150032DA44 /* UIImage+AverageColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

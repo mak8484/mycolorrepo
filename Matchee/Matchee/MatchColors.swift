@@ -19,17 +19,6 @@ enum colorMatchingAlgorithms{
 
 }
 
-struct MatchingCriterias {
-    public static let complementaryColorDegrees:CGFloat = 20.0
-    public static let minimumSaturation:CGFloat = 0.02
-    public static let monoChromaticHueDifference:CGFloat = 0.035
-    public static let analogousAngle:CGFloat = 30.0
-    public static let triadicAngle:CGFloat = 5.0
-    public static let hueSimilarityAccessories:CGFloat = 2.0
-    public static let brightnessSimilarityAccessories:CGFloat = 0.2
-    public static let howAnalogousCriteria:CGFloat = 0.10
-}
-
 /////////////////////!!!!!!!!!!!!!!!!!!!!!!////
 // Note that all calcuation are in RGB space //
 /////////////////////!!!!!!!!!!!!!!!!!!!!!!////
@@ -257,7 +246,7 @@ class MatchColors: NSObject {
         }
     }
     
-    //MARK: Color matching methods
+    //MARK: - Color matching methods
     
     
     //Complementary

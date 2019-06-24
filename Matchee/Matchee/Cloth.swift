@@ -166,9 +166,7 @@ class Cloth {
         
         return sortedArray
         
-    }
-
-    
+    }    
 }
 
 

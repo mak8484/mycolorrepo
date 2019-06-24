@@ -12,7 +12,7 @@ import MessageUI
 
 class MatchSettingsViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
-    //Outlets
+    //MARK: - Outlets
     @IBOutlet var ButtonComplementary: UIButton!
     @IBOutlet var ButtonMono: UIButton!
     @IBOutlet var ButtonAnalogous: UIButton!
@@ -20,11 +20,17 @@ class MatchSettingsViewController: UIViewController, MFMailComposeViewController
     
     @IBOutlet var buttonBuyMore: UIButton!
     
+    //MAR: Class status properties
     var complementary:Int = 0
     var mono:Int = 0
     var analogous:Int = 0
     var split:Int = 0
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -85,7 +91,8 @@ class MatchSettingsViewController: UIViewController, MFMailComposeViewController
 
     }
 
-    //Buttons actions
+    //MARK: Class handling methods
+    
     @IBAction func closeController(_ sender: UIButton) {
         dismiss(animated: true, completion: {
         
@@ -156,12 +163,6 @@ class MatchSettingsViewController: UIViewController, MFMailComposeViewController
         else{
             self.performSegue(withIdentifier: "IAPSegue", sender: nil)
         }
-//        let mixpanel = Mixpanel.sharedInstance()
-//        var properties = [String: String]()
-//        properties = ["Purchase": ""]
-//        mixpanel.track("Purchased Filter", properties: properties)
-//
-//        SweetAlert().showAlert(NSLocalizedString("addons_availableSoon", comment: ""), subTitle: NSLocalizedString("addons_availableSoonText", comment: ""), style: AlertStyle.none)
     }
     
     @IBAction func sendFeedbackButtonAction(_ sender: UIButton) {
@@ -180,9 +181,7 @@ class MatchSettingsViewController: UIViewController, MFMailComposeViewController
         controller.dismiss(animated: true)
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+   
     
  
 
