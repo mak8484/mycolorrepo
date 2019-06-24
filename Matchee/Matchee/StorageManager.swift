@@ -467,8 +467,9 @@ class StorageManager: NSObject {
         fetchRequest.returnsObjectsAsFaults = false
         
         let condition = true
-        fetchRequest.predicate = NSPredicate(format: "isCurrent == %@", condition as CVarArg)
-        //Set all sets to NOT current
+        
+            fetchRequest.predicate = NSPredicate(format: "isCurrent == %d", condition)
+            //Set all sets to NOT current
         do {
             let fetchedSet = try context.fetch(fetchRequest)
         
@@ -481,7 +482,7 @@ class StorageManager: NSObject {
                     fatalError("Failed change to not current: \(error)")
                 }
             }
-        } catch {
+        } catch  {
             fatalError("Failed to fetch: \(error)")
         }
         
